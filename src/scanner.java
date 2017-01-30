@@ -22,9 +22,19 @@ import java.util.Scanner;
 
 public class scanner {
 
-    public data data;
+    public Integer  no_of_features = null;;
+    public Integer  feature_counter  =   -1;
+    public Integer  no_of_examples = null;
+    public Integer  example_counter  =   -1;
+    public ArrayList features  =   new ArrayList<features>();
+    public ArrayList examples  =   new ArrayList<examples>();
+    public boolean read_features   =   false;
+    public boolean read_examples    =   false;
+    public Integer  no_of_labels_possible    =   2;
+    public String[]   possible_lable_values   = new String[no_of_labels_possible];
 
-	public data read_files(String args[]) {
+    
+	public void read_files(String args[]) {
 		// Make sure an input file was specified on the command line.
 		// If this fails and you are using Eclipse, see the comments
 		// in the header above.
@@ -55,63 +65,62 @@ public class scanner {
 			}
 
 			//if first valid line and no_of_features is empty then incoming line has no_of_features
-			if(data.get_no_of_features()==null){
-				data.set_no_of_features(Integer.parseInt(line.trim()));
+			if(no_of_features==null){
+				no_of_features  =   Integer.parseInt(line.trim());
 				continue;
 			}
 			//check if the incoming line is a feature then increment feature count
-			if(data.no_of_features!=null&&data.feature_counter<data.no_of_features-1){
-				data.feature_counter++;
-				data.read_features   =   true;
+			if(no_of_features!=null&&feature_counter<no_of_features-1){
+				feature_counter++;
+				read_features   =   true;
 			}
 			else{
-				data.read_features   =   false;
+				read_features   =   false;
 			}
 
 			//read features
-			if (data.read_features) {
+			if (read_features) {
 				String line_components[]   =   line.split("-");
 				features feature =  new features();
 				feature.name  =   line_components[0].trim();
 				feature.values    =line_components[1].trim().split(" ");
-				data.features.add(feature);
+				features.add(feature);
 				continue;
 			}
 
 			//after reading features, read possible values of labels
-			if(data.no_of_labels_possible>0){
-				data.possible_lable_values[2-data.no_of_labels_possible]   = line.trim();
-				data.no_of_labels_possible--;
+			if(no_of_labels_possible>0){
+				possible_lable_values[2-no_of_labels_possible]   = line.trim();
+				no_of_labels_possible--;
 				continue;
 			}
 
 			//after reading features take the line containing no_of_examples
-			if(data.no_of_examples==null){
-				data.no_of_examples = Integer.parseInt(line.trim());
+			if(no_of_examples==null){
+				no_of_examples = Integer.parseInt(line.trim());
 				continue;
 			}
 
 			//check if the incoming line is a example then increment example_count
-			if(data.no_of_examples!=null&&data.example_counter<data.no_of_examples){
-				data.example_counter++;
-				data.read_examples   =   true;
+			if(no_of_examples!=null&&example_counter<no_of_examples){
+				example_counter++;
+				read_examples   =   true;
 			}
 			else{
-				data.read_examples   =   false;
+				read_examples   =   false;
 			}
 
 
 			//read examples
-			if (data.read_examples) {
+			if (read_examples) {
 				String line_components[]   =   line.split(" ");
 				examples example    =   new examples();
 				example.name  =   line_components[0];
                 String new_line_components[] =   Arrays.copyOfRange(line_components, 1, line_components.length);
 				example.feature_values  = new_line_components;
-				data.examples.add(example);
+				examples.add(example);
 			}
 		}
-		return data;
 	}
 
 
