@@ -45,27 +45,29 @@ public class scanner {
             String line = fileScanner.nextLine().trim();
 
             // Skip blank lines.
-            if(line.length() == 0) {
+            if(line.length() == 0||(new Scanner(line).hasNext()&&new Scanner(line).next().equals("//"))){
                 continue;
             }
 
-            // Print out a message marking each line.
-            System.out.println("Line " + lineCount + "\n=======");
-            lineCount++;
+//            // Print out a message marking each line.
+//            System.out.println("Line " + lineCount + "\n=======");
+//            lineCount++;
 
             // Use another scanner to parse each word from the line
             // and print it.
             Scanner lineScanner = new Scanner(line);
 
-            int wordCount = 1;
+//            int wordCount = 1;
             while(lineScanner.hasNext()) {
                 String word = lineScanner.next();
-                System.out.println("Word " + wordCount + ": " +
-                        word);
-                wordCount++;
+//                System.out.println("Word " + wordCount + ": " +
+//                        word);
+//                wordCount++;
             }
 
-            System.out.println();
+//            System.out.println();
         }
     }
+
+
 }
