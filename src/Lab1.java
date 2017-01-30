@@ -4,7 +4,7 @@
 public class Lab1 {
     public static void main(String args[]){
         scanner S = new scanner();
-        S.read_files(args);
-
+        data train  =   S.read_files(args);
+        System.out.print(train.features.get(0));
     }
 }
