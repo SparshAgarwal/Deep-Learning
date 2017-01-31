@@ -34,11 +34,11 @@ public class scanner {
     public String[]   possible_lable_values   = new String[no_of_labels_possible];
 
     
-	public void read_files(String args[]) {
+	public void read_files(String args) {
 		// Make sure an input file was specified on the command line.
 		// If this fails and you are using Eclipse, see the comments
 		// in the header above.
-		if (args.length != 1) {
+		if (args == null) {
 			System.err.println("Please supply a filename on the " +
 					"command line: java ScannerSample" +
 					" <filename>");
@@ -48,9 +48,9 @@ public class scanner {
 		// Try creating a scanner to read the input file.
 		Scanner fileScanner = null;
 		try {
-			fileScanner = new Scanner(new File(args[0]));
+			fileScanner = new Scanner(new File(args));
 		} catch(FileNotFoundException e) {
-			System.err.println("Could not find file '" + args[0] +
+			System.err.println("Could not find file '" + args +
 					"'.");
 			System.exit(1);
 		}
