@@ -1,1 +1,21 @@
 dataytpes for the variables(int or long)
+
+
+
+Q.Lab Report for Lab 2.I'm a bit confusing about what to put in the lab report. The slide says only focus on experimental result and discussion,
+but I'm not sure other than accuracy measure for different number of hidden units and error vs epoch plot, what else should I put into the report?
+    A. Make one plot for each number of HUs.
+    On each plot have three curves. One for train, one for tune, one for test
+    There is a stylized plot like in the lecture notes
+    Jude
+Q.What loss function should I use for lab 1 and 2? Do I just choose whatever loss function I want?
+    Use squared error (plus the sum of squared weights if you do weight decay).
+    Jude
+Q.When I use step function as activation function, the training error of my program does not stably decrease at each training iterations. After some iterations, the training error may jump from 15% to 40%.
+  I tried sigmoid function and linear function, these worked fine.
+    Yes, that was the sort of oscillating results we got in my cs540 last term.  It is a mystery as to why.  I fixed it by using an ensemble.  Nice to know other activation functions work better.
+    Did you include the derivative of the sigmoid?  According to the calculation of the backprop algo you should, though it might work to ignore it.  The linear function has a derivative of 1, so it is 'included' automatically.
+    Jude
+    Yes, that was the sort of oscillating results we got in my cs540 last term.  It is a mystery as to why.  I fixed it by using an ensemble.  Nice to know other activation functions work better.
+    Did you include the derivative of the sigmoid?  According to the calculation of the backprop algo you should, though it might work to ignore it.  The linear function has a derivative of 1, so it is 'included' automatically.
+    Jude
