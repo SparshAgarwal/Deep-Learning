@@ -1,1 +1,0 @@
-dataytpes for the variables(int or long)
