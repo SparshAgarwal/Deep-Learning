@@ -1,14 +1,15 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 
-/**
- * Created by sparsh on 1/30/2017.
- */
-public class examples {
+class examples {
     public String name;
-    public String[] feature_values;
+    public ArrayList<String> feature_values;
+
+    examples(){
+        feature_values  =   new ArrayList<String>();
+    }
 
     @Override
     public String toString(){
-        return  "Name:" +   name    +   "values:"   + Arrays.toString(feature_values);
+        return  "Name:" +   name    +   "values:"   + feature_values;
     }
 }
