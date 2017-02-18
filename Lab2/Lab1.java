@@ -188,6 +188,7 @@ class scanner {
             }
             amino_acids.add(amino);
             protien_label.add(label);
+            System.out.print(amino_acids.get(0).toString());
         }
         System.out.print(protien_number);
     }
