@@ -452,7 +452,7 @@ class Perceptron{
 
 		for(int i = 0; i < numIn; i++){
 			if(Math.random()>=dropout){
-				net += inputs.get(i) * weights[i]*weightDecay;
+				net += inputs.get(i) * weights[i]*(1-weightDecay);
 			}
 		}
 
@@ -826,6 +826,7 @@ public class Lab2{
 
 		// Epoch experiment, for plotting accuracy versus epoch graph
 		// epochExperiment(3000, 1, proteinData, 3, 0.025);
-		bestAccuracy(proteinData, 0.2, 0.01);	
+		bestAccuracy(proteinData, 0, 0);	// to pass dropout and weightDecay, just pass parameters,
+											// first is for dropout and second is for weightDecay 
 	}
 }
