@@ -23,6 +23,6 @@ Some References on Audio Processing:
 2) [Wav File Explained 2](https://blogs.msdn.microsoft.com/dawate/2009/06/23/intro-to-audio-programming-part-2-demystifying-the-wav-format/)  
 
 Some libraries to convert wav file or signals into feature vectors (Useful for plotting spectogram and stuff) (Or calculating audio stuff)  
-1) [Librosa](https://librosa.github.io/librosa/index.html)  
+1) [Librosa](https://librosa.github.io/librosa/index.html) (Currently using this <Wayne>)  
 2) [Madmom](http://madmom.readthedocs.io/en/latest/index.html)  
-3) [pyAudioAnalysis](https://github.com/tyiannak/pyAudioAnalysis) (Currently using this <Wayne>)
+3) [pyAudioAnalysis](https://github.com/tyiannak/pyAudioAnalysis)  
