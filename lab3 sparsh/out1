@@ -1,0 +1,60 @@
+java Lab3_wayne_sparsh
+The trainset contains 554 examples.  Took 340 milliseconds.
+The  testset contains 180 examples.  Took 72 milliseconds.
+The  tuneset contains 178 examples.  Took 64 milliseconds.
+
+The input vector size is 1,024.
+
+Converted 554 TRAIN examples to feature vectors. Took 94 milliseconds.
+Converted 180 TUNE  examples to feature vectors. Took 5 milliseconds.
+Converted 178 TEST  examples to feature vectors. Took 5 milliseconds.
+
+Time to start learning!
+Layer1: Convolutional Layer
+Input Dimensions: 32 x 32 x 1
+Output Dimensions: 28 x 28 x 20
+Layer2: Pooling Layer
+Input Dimensions: 28 x 28 x 20
+Output Dimensions: 14 x 14 x 20
+Layer3: Convolutional Layer
+Input Dimensions: 14 x 14 x 20
+Output Dimensions: 10 x 10 x 20
+Layer4: Pooling Layer
+Input Dimensions: 10 x 10 x 20
+Output Dimensions: 5 x 5 x 20
+Layer5: Output Layer
+Input Dimensions: 5 x 5 x 20
+Output Dimensions: 6 x 1 x 1
+Using: ETA = 0.001000, patience = 1000, epochStep = 1
+12.2222%
+Done with Epoch # 0.  Took 9 seconds (9 seconds overall).
+18.8889%
+Done with Epoch # 1.  Took 8 seconds (17 seconds overall).
+20.5556%
+Done with Epoch # 2.  Took 8 seconds (24 seconds overall).
+15.5556%
+Done with Epoch # 3.  Took 8 seconds (32 seconds overall).
+18.8889%
+Done with Epoch # 4.  Took 8 seconds (40 seconds overall).
+16.1111%
+Done with Epoch # 5.  Took 8 seconds (48 seconds overall).
+17.7778%
+Done with Epoch # 6.  Took 8 seconds (55 seconds overall).
+17.2222%
+Done with Epoch # 7.  Took 8 seconds (1 minutes and 3 seconds overall).
+18.8889%
+Done with Epoch # 8.  Took 8 seconds (1 minutes and 11 seconds overall).
+16.1111%
+Done with Epoch # 9.  Took 8 seconds (1 minutes and 18 seconds overall).
+17.2222%
+Done with Epoch # 10.  Took 8 seconds (1 minutes and 26 seconds overall).
+19.4444%
+Done with Epoch # 11.  Took 8 seconds (1 minutes and 34 seconds overall).
+18.3333%
+Done with Epoch # 12.  Took 8 seconds (1 minutes and 41 seconds overall).
+17.2222%
+Done with Epoch # 13.  Took 8 seconds (1 minutes and 49 seconds overall).
+18.3333%
+Done with Epoch # 14.  Took 8 seconds (1 minutes and 57 seconds overall).
+17.2222%
+Done with Epoch # 15.  Took 8 seconds (2 minutes and 4 seconds overall).

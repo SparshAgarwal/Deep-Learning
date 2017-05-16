@@ -1,0 +1,195 @@
+// Data from Professor Shavlik's CS CS540 (UW-Madison)
+// This dataset is used to predict the quality of red wine based on various physicochemical properties.
+
+// The structure of this dataset is described below.
+// (we're using a very restricted design for simplicity).
+
+// You can visit
+//    http://archive.ics.uci.edu/ml/datasets/Wine+Quality
+// to see more about this dataset.
+
+// NOTE: Your code should handle both Windows-formatted and Linux-formatted files
+// (which, unfortunately, differ in how the end of line is represented).
+
+// Your code should HANDLE ANY AMOUNT OF 'white space,' including blank lines, BETWEEN TOKENS.
+
+// Note that you only need to handle '//' comments (ie, there will be no "/* */" comments.
+// It is easy in Java to the contents of a string BEFORE any '//' (might get the empty string,
+// which should also be ignored).
+
+// For simplicity, this dataset contains 20 boolean-valued features which were derived 
+// from the original 11 real-valued features. The boolean-valued features were generated
+// by normalizing (range 0-100) and discretizing the real-valued features. The threshold
+// values appear in the feature name. For example, fixedAcidityGt47 is T if the fixedAcidity 
+// of the example is greater than 47, and F if the fixedAcidity of the example is less than 47.
+
+// The number of features:
+20
+
+// Next are the feature names followed by a dash and then the legal values of this feature
+// In the CS 540 programming HWs related to decision trees, we will assume that all features have
+// two possible values, though they might have names other than the T and F used here (eg,
+// might have: "size - small big" in some other testbed used during grading).
+
+fixedAcidityGt47 - T F
+
+volatileAcidityGt17 - T F
+volatileAcidityGt29 - T F
+
+citricAcidGt30 - T F
+
+residualSugarGtMean - T F
+
+chloridesGt9 - T F
+
+freeSulfurDioxideGtMean - T F
+
+totalSulfurDioxideGt27 - T F
+totalSulfurDioxideGt37 - T F
+totalSulfurDioxideGt54 - T F
+
+densityGt18 - T F
+densityGt41 - T F
+
+pHGtMean - T F
+
+sulphatesGt12 - T F
+sulphatesGt15 - T F
+sulphatesGt19 - T F
+sulphatesGt44 - T F
+
+alcoholGt22 - T F
+alcoholGt33 - T F
+alcoholGt47 - T F
+
+// The original class label was a rating of the wine on a scale from 0-10. In this dataset, ratings  
+// from 0-5 are combined into "lowToMid" and ratings from 6-10 are combined into "midToHigh".
+// Assume that for CS 540 HWs, only two values are possible for the class label.
+lowToMid
+midToHigh
+
+// The number of examples (will read this many in; ok to have more in the file)
+113
+
+// The examples (as mentioned above, we assume, for simplicity, that all features are BOOLEAN-VALUED, 
+// *though the names of the two values might differ across datasets*)
+
+//   First is the example's name, then its category, finally followed
+//   by the values of all of its features (listed in the order of the
+//   feature names above, will be separated by "whitespace"). 
+//   The (boring) names are simply used to concisely identify the examples.
+//   Your decision-tree learner should NOT use these names as a feature (what would happen if you did?).
+
+trainEx780 midToHigh F T T F F F F F F F T F T T T F F T T T
+trainEx781 lowToMid F T F F T T T T F F T T T T T F F F F F
+trainEx782 midToHigh F T F F T T T F F F T T T T T T F T F F
+trainEx783 lowToMid F T T F F T T F F F T F T F F F F T T F
+trainEx784 lowToMid F T T T T T F T F F T T F T T T F T F F
+trainEx785 lowToMid F T F F F T T T T F T T F T F F F F F F
+trainEx786 lowToMid F T T T F T F F F F T T F T F F F T F F
+trainEx787 midToHigh T F F T T T T F F F T T F T T T F F F F
+trainEx788 midToHigh F F F T F T F F F F T T F T T T T T T T
+trainEx789 lowToMid F T T F T T F F F F T T T F F F F T T F
+trainEx790 midToHigh F T F F F T F F F F T F T T T F F T T T
+trainEx791 midToHigh F T T F T T T F F F T T T T T T F T T F
+trainEx792 midToHigh F T F T F F F F F F T F T T T T F T T T
+trainEx793 lowToMid F T F F T F F F F F T F F F F F F T F F
+trainEx794 lowToMid F T T F T T T T F F T T T T T T F F F F
+trainEx795 lowToMid F T T F F T F F F F T T F T T F F T F F
+trainEx796 midToHigh T T F T F F F F F F T T F T T T F T F F
+trainEx797 lowToMid T T F T F T F F F F T T F T T T F T T F
+trainEx798 lowToMid F T T F F T F F F F T T F T F F F F F F
+trainEx799 lowToMid F T F T T T T T F F T T F T T F F F F F
+trainEx800 lowToMid F T T F T T F F F F T T T F F F F F F F
+trainEx801 midToHigh T F F T F T T F F F T T F T T T F T T T
+trainEx802 midToHigh F F F T F F T F F F T T T T T T F T T F
+trainEx803 midToHigh F T F F F T F F F F T F T T F F F T F F
+trainEx804 midToHigh F T T F F T T T F F T F F F F F F F F F
+trainEx805 lowToMid F T T F F T F F F F T T F T F F F F F F
+trainEx806 midToHigh F T T F T T F F F F T T T T F F F T F F
+trainEx807 midToHigh F F F T T F F F F F T T F T T T F T T F
+trainEx808 midToHigh F T F T T T T T F F T T T T T F F F F F
+trainEx809 midToHigh F F F T F F T F F F T F F T T T F T T F
+trainEx810 lowToMid F T T F F T T F F F T T T F F F F F F F
+trainEx811 midToHigh F F F T F F F F F F T T T T T T F T F F
+trainEx812 lowToMid F T F T F T T T F F T T T T T T F T T F
+trainEx813 midToHigh F F F T F T T F F F T F T T T T F T T T
+trainEx814 midToHigh T T F T T T T F F F T T F T T T F T F F
+trainEx815 midToHigh F F F T T T F F F F T F F F F F F T T T
+trainEx816 midToHigh F T F T T F T F F F T F T T T T F T T T
+trainEx817 lowToMid F T T F F F T T F F T F T F F F F T F F
+trainEx818 midToHigh F T T F F T F F F F T T F T T F F T F F
+trainEx819 lowToMid F T F T T F F F F F T T F F F F F T F F
+trainEx820 lowToMid F F F T T F F T T F T T F T F F F T T T
+trainEx821 midToHigh F T F F F T F F F F T F T T T T F T T F
+trainEx822 lowToMid F T F F F T F F F F T T T F F F F T F F
+trainEx823 midToHigh T T F T F T T F F F T T F T T T F T T T
+trainEx824 midToHigh F T F F F T F F F F T T F T F F F T F F
+trainEx825 midToHigh T F F T F F F F F F T T F T T T F T T F
+trainEx826 midToHigh F T F T F F T F F F T F T T T T F T T T
+trainEx827 midToHigh F T T F F T T T F F T T F T F F F F F F
+trainEx828 midToHigh T F F T F T F F F F T T F T T T F T T T
+trainEx829 midToHigh T F F T F T F F F F T T F T T F F F F F
+trainEx830 midToHigh T T F T F T F F F F T T F T T T F F F F
+trainEx831 lowToMid F F F T F F T T T F T T F T T T T F F F
+trainEx832 lowToMid F T F F F T F F F F T T T T F F F F F F
+trainEx833 midToHigh F T T F F F F T F F F F T T T T F T T T
+trainEx834 lowToMid F T T F F T T F F F T F T F F F F T F F
+trainEx835 midToHigh F T F F F T F F F F T T T T T T F F F F
+trainEx836 midToHigh F F F T F T F F F F T T F T T T F F F F
+trainEx837 lowToMid F T T F F T T F F F T F T F F F F F F F
+trainEx838 midToHigh F T F F F F T F F F F F T T T F F T T T
+trainEx839 midToHigh F T T F F T F F F F T T T T F F F F F F
+trainEx840 midToHigh T T F T T T F F F F T T F T T T F T T T
+trainEx841 lowToMid F T F F F F F F F F T F T F F F F F F F
+trainEx842 midToHigh F T T F F T F F F F T T T T T F F T F F
+trainEx843 midToHigh F T F T F T F F F F T T T T F F F T T F
+trainEx844 lowToMid F T F F F T F F F F T T F T T T F T T F
+trainEx845 midToHigh F T T F F T T F F F T T T T T F F T F F
+trainEx846 midToHigh F T F T F T F F F F T F T T T T F T T F
+trainEx847 midToHigh F T F F F F F F F F T F T T T F F T T T
+trainEx848 lowToMid F T T F F T T F F F T T F T T F F T T F
+trainEx849 lowToMid T T T F T T T F F F T T F T T T F T F F
+trainEx850 lowToMid F T T T F T T T F F T T T F F F F F F F
+trainEx851 lowToMid F T F T T T T T T F T T T T T T F T F F
+trainEx852 lowToMid F T F T F T F F F F T T F T T F F F F F
+trainEx853 lowToMid F T F F T T T F F F T T F F F F F F F F
+trainEx854 midToHigh F T T F F T F F F F T F T T F F F T T T
+trainEx855 lowToMid F T T F F T F F F F T T F T T T F F F F
+trainEx856 lowToMid T T F T T T F F F F T T F T T F F F F F
+trainEx857 lowToMid T T T T F T F F F F T T F T T F F T F F
+trainEx858 midToHigh F T F T T F F F F F T F T T T T F T T T
+trainEx859 midToHigh T F F T F T F F F F T T F T T T T F F F
+trainEx860 lowToMid T T T T F F F F F F T T F F F F F T F F
+trainEx861 midToHigh F T F T T T T F F F T T T T T T F F F F
+trainEx862 midToHigh F F F T F T T F F F T T T T T T F T T F
+trainEx863 lowToMid F T T F T T T T T F T T F F F F F F F F
+trainEx864 midToHigh F T T T F T T F F F T T F T T T T F F F
+trainEx865 midToHigh F F F T F T F F F F T T F T T T F T T F
+trainEx866 midToHigh F T T F F T F T F F T T F T T T T T F F
+trainEx867 midToHigh F T T F F F T F F F T F T F F F F T T F
+trainEx868 lowToMid F T F F F T T F F F T T F F F F F F F F
+trainEx869 lowToMid F T T T F T T T T F T T F F F F F F F F
+trainEx870 lowToMid F T T F F T T F F F T F T F F F F F F F
+trainEx871 lowToMid F T T F T T T T T F T T F F F F F F F F
+trainEx872 lowToMid F T T F F T F F F F T T F T T F F F F F
+trainEx873 midToHigh T F F T F T F F F F T T F T T T F T F F
+trainEx874 lowToMid F T F T F T T T T F T T F T T T T F F F
+trainEx875 midToHigh F T F F F T T F F F T T T T T T F T T F
+trainEx876 lowToMid F T T F F T T F F F T T T T T T F T T F
+trainEx877 midToHigh F T F F F T T F F F T T T T T T F T T F
+trainEx878 midToHigh F T F T F T F F F F T T F T T T F T F F
+trainEx879 midToHigh T F F T F T F F F F T T F T T T F T T F
+trainEx880 midToHigh F F F T F F F F F F T F F F F F F T T T
+trainEx881 midToHigh F T T F T T F F F F T T F T T F F F F F
+trainEx882 lowToMid F T F T F T F F F F T T T F F F F F F F
+trainEx883 midToHigh F T F T F T T F F F T T F T T T F T T T
+trainEx884 lowToMid F T T F T T T F F F T T T F F F F T T F
+trainEx885 lowToMid F T T F F T F F F F T T T T T T F F F F
+trainEx886 midToHigh F T T F F T T F F F T F T T F F F T T F
+trainEx887 midToHigh T T F T T T F F F F T T F T T F F T F F
+trainEx888 lowToMid F T T F F T T T F F T T T T F F F F F F
+trainEx889 midToHigh F T F F F F F F F F T F T T T F F F F F
+trainEx890 midToHigh F T T F F F F F F F T F T T T F F T T T
+trainEx891 lowToMid F T F T F T F F F F T T T T T T F T F F
+trainEx892 midToHigh T F F T T T T F F F T T F T T T F T F F

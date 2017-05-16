@@ -1,0 +1,163 @@
+// this dataset is used to predict the quality of red wine based on various physicochemical properties.
+
+// you can visit
+//    http://archive.ics.uci.edu/ml/datasets/Wine+Quality
+// to see more about this dataset.
+
+// the number of features
+
+20
+
+// The feature names followed by a dash and then the legal values of this feature
+
+fixedAcidityGt47 - T F
+
+volatileAcidityGt17 - T F
+volatileAcidityGt29 - T F
+
+citricAcidGt30 - T F
+
+residualSugarGtMean - T F
+
+chloridesGt9 - T F
+
+freeSulfurDioxideGtMean - T F
+
+totalSulfurDioxideGt27 - T F
+totalSulfurDioxideGt37 - T F
+totalSulfurDioxideGt54 - T F
+
+densityGt18 - T F
+densityGt41 - T F
+
+pHGtMean - T F
+
+sulphatesGt12 - T F
+sulphatesGt15 - T F
+sulphatesGt19 - T F
+sulphatesGt44 - T F
+
+alcoholGt22 - T F
+alcoholGt33 - T F
+alcoholGt47 - T F
+
+// the class labels
+
+lowToMid
+midToHigh
+
+// the number of examples (will read this many in; ok to have more in the file)
+
+108
+
+// the examples
+
+trainEx306 midToHigh F T T F F T T T F F T T F T F F F F F F
+trainEx739 midToHigh F F F T F F F F F F T F T T F F F T T T
+trainEx468 midToHigh F T F F F T T F F F T F T T T F F T T F
+trainEx378 lowToMid F T T F F T F F F F T T T T T T F T F F
+trainEx734 midToHigh T T F T F T T F F F T T F T T T F T F F
+trainEx174 lowToMid F T T F F T F F F F T T T T T T F F F F
+trainEx748 lowToMid F T F F F T T F F F T T F T F F F T F F
+trainEx343 lowToMid F T F T T T T F F F T T T T F F F F F F
+trainEx784 lowToMid F T T T T T F T F F T T F T T T F T F F
+trainEx200 midToHigh F T F F T T F F F F T T F T F F F T F F
+trainEx689 lowToMid F T T T F T T T T F T T F T T F F F F F
+trainEx413 lowToMid F T F T F T T F F F T T T T F F F F F F
+trainEx724 lowToMid F T T F F T F F F F T T T T T T F F F F
+trainEx796 midToHigh T T F T F F F F F F T T F T T T F T F F
+trainEx812 lowToMid F T F T F T T T F F T T T T T T F T T F
+trainEx148 midToHigh F T F T T T F F F F T T F T T T F T T T
+trainEx592 lowToMid F T T F F T F T F F T T F F F F F T F F
+trainEx839 midToHigh F T T F F T F F F F T T T T F F F F F F
+trainEx345 midToHigh T T T T F T F F F F T T F T T T F F F F
+trainEx215 midToHigh F F F F F T T F F F T T T T F F F T F F
+trainEx524 midToHigh T F F T T T F F F F T T F T T T F T T T
+trainEx230 midToHigh T T F T T T T T F F T T F T T T F F F F
+trainEx450 midToHigh T F F T F T T F F F T F F T T T F T T T
+trainEx606 lowToMid F T F F F T F F F F T T F T T F F F F F
+trainEx272 midToHigh F T F F F T F F F F T T T F F F F T F F
+trainEx692 midToHigh F T F T F T T F F F T T F T T T F T T F
+trainEx855 lowToMid F T T F F T F F F F T T F T T T F F F F
+trainEx558 midToHigh F T F F F T F F F F T T F T T F F T F F
+trainEx372 lowToMid F T F T F T F F F F T T F T F F F F F F
+trainEx448 midToHigh T T F T T T T F F F T T F T T T F T F F
+trainEx663 midToHigh T T F T T T F F F F T T F T T F F T T F
+trainEx110 midToHigh F T T F T T F F F F T T T T F F F F F F
+trainEx616 lowToMid F T T F F F T F F F T F T T T F F T T F
+trainEx467 midToHigh F T T F F T F F F F T T F T T F F T T F
+trainEx169 midToHigh F T T F F F F F F F T T T T T F F T T F
+trainEx685 lowToMid F F F F F T T F F F T T F T T T F F F F
+trainEx274 lowToMid F T F F T T F F F F T T T F F F F T T F
+trainEx876 lowToMid F T T F F T T F F F T T T T T T F T T F
+trainEx601 midToHigh F T T F F T F F F F T T F T T F F F F F
+trainEx231 midToHigh F F F T F T T F F F T T F T T T F T T F
+trainEx241 lowToMid F T T F F T T T F F T T T T F F F F F F
+trainEx354 lowToMid F T T F F F F F F F T F T F F F F T T F
+trainEx83 lowToMid T T F T T T F F F F T T F T T T F T T T
+trainEx888 lowToMid F T T F F T T T F F T T T T F F F F F F
+trainEx501 lowToMid F T T T T T F F F F T T T T T T F T F F
+trainEx15 midToHigh F T F T F T F T F F T T F T T T T T F F
+trainEx677 lowToMid F T F F F T F F F F T T T T T F F F F F
+trainEx27 midToHigh F T T F F T T F F F T T T T T T F T T T
+trainEx345 midToHigh T T T T F T F F F F T T F T T T F F F F
+trainEx502 midToHigh F T T T F F T F F F T T F T F F F T F F
+trainEx23 lowToMid F T F T F F F F F F T T F T T T F F F F
+trainEx803 midToHigh F T F F F T F F F F T F T T F F F T F F
+trainEx863 lowToMid F T T F T T T T T F T T F F F F F F F F
+trainEx534 lowToMid F F F F T T T F F F T T T T T T F T T F
+trainEx197 midToHigh T T F T T F F F F F T T T T T F F T T T
+trainEx689 lowToMid F T T T F T T T T F T T F T T F F F F F
+trainEx119 lowToMid F T T F F T F F F F T T T T T F F T F F
+trainEx147 midToHigh T T F T T T F F F F T T F T T T F T T T
+trainEx354 lowToMid F T T F F F F F F F T F T F F F F T T F
+trainEx652 lowToMid F T F F F F F F F F T F T T F F F F F F
+trainEx652 lowToMid F T F F F F F F F F T F T T F F F F F F
+trainEx378 lowToMid F T T F F T F F F F T T T T T T F T F F
+trainEx437 lowToMid F T T F T T F F F F T T T F F F F T F F
+trainEx845 midToHigh F T T F F T T F F F T T T T T F F T F F
+trainEx581 midToHigh T T F T T T T F F F T T F T T T F T T F
+trainEx174 lowToMid F T T F F T F F F F T T T T T T F F F F
+trainEx193 lowToMid F T T F F T F F F F T T F F F F F F F F
+trainEx90 midToHigh F T T F T T F F F F T T T T T F F T T T
+trainEx553 midToHigh F T F F F F T F F F T F T T T T F T T F
+trainEx776 midToHigh F T F F F T F F F F T T T F F F F F F F
+trainEx776 midToHigh F T F F F T F F F F T T T F F F F F F F
+trainEx247 lowToMid T T F T F T F F F F T T F F F F F F F F
+trainEx290 lowToMid F T F F F F F F F F T T T T T F F F F F
+trainEx571 lowToMid F T F F F T F F F F T T T F F F F F F F
+trainEx264 lowToMid F T T F F T T F F F T F F T F F F F F F
+trainEx163 lowToMid T T T T T T F F F F T T F T T T F T T F
+trainEx133 lowToMid F T F T F T T T T F T T F T F F F F F F
+trainEx390 lowToMid F F F T F T T T F F T T F T T T F F F F
+trainEx119 lowToMid F T T F F T F F F F T T T T T F F T F F
+trainEx872 lowToMid F T T F F T F F F F T T F T T F F F F F
+trainEx179 midToHigh F F F F F T F F F F T T T T T T F T F F
+trainEx589 midToHigh F T F T F T F F F F T T F T T T F T T F
+trainEx430 lowToMid F T T F T T T T F F T T F F F F F F F F
+trainEx255 midToHigh F T F F F T T F F F T T T T T T F F F F
+trainEx353 lowToMid F T T F T T F F F F T T T F F F F T T T
+trainEx115 lowToMid F T F T T T T F F F T T T T T F F F F F
+trainEx382 lowToMid F T T F F T F F F F T T F F F F F F F F
+trainEx93 midToHigh F T F F T T T F F F T T T T T T F F F F
+trainEx328 lowToMid F T T F F T T F F F T T T T F F F T F F
+trainEx733 lowToMid T T F T F T F F F F T T F F F F F F F F
+trainEx752 lowToMid F T T F F T F F F F T T T F F F F F F F
+trainEx666 midToHigh F T T F F T F F F F T F T T T F F T F F
+trainEx490 midToHigh F F F T F T F F F F T T T T T T F T T T
+trainEx248 lowToMid F T F T F T F F F F T T F F F F F F F F
+trainEx866 midToHigh F T T F F T F T F F T T F T T T T T F F
+trainEx2 lowToMid F T T F F T F F F F T T F T T T F F F F
+trainEx270 midToHigh F T F F F F F F F F T F T T T T F T T F
+trainEx117 lowToMid F T F T T T F F F F T T F T F F F T T F
+trainEx39 midToHigh T T F T T T T F F F T T F T T T F T T T
+trainEx214 midToHigh T T F T F T F F F F T T F T T T F T T T
+trainEx412 midToHigh T T T F T T T F F F T T F T T T F T F F
+trainEx679 midToHigh T T F T T T T F F F T T F T T T F T F F
+trainEx162 lowToMid T T T T T T T T F F T T F T F F F T F F
+trainEx770 midToHigh F T F T T T F F F F T T F T T F F T T T
+trainEx416 lowToMid F T T F F T F F F F T F F F F F F F F F
+trainEx246 lowToMid F T F T F T T F F F T T T T T F F F F F
+trainEx114 lowToMid F T T F F T T F F F T F F F F F F F F F
+trainEx627 midToHigh F T F T F F F F F F T T F T T T F T T F
+

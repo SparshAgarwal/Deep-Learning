@@ -1,0 +1,203 @@
+// The structure of this dataset is described below.
+// (we're using a very restricted design for simplicity).
+
+// You can visit
+//    http://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data
+// to see more about this dataset.
+
+// NOTE: Your code should handle both Windows-formatted and Linux-formatted files
+// (which, unfortunately, differ in how the end of line is represented).
+
+// Your code should HANDLE ANY AMOUNT OF 'white space,' including blank lines, BETWEEN TOKENS.
+
+// Note that you only need to handle '//' comments (ie, there will be no "/* */" comments.
+// It is easy in Java to the contents of a string BEFORE any '//' (might get the empty string,
+// which should also be ignored).
+
+// The number of features:
+31
+
+// Next are the feature names followed by a dash and then the legal values of this feature
+// In the CS 540 programming HWs related to decision trees, we will assume that all features have
+// two possible values, though they might have names other than the T and F used here (eg,
+// might have: "size - small big" in some other testbed used during grading).
+
+// Converted DGN from ONE feature with SEVEN legal values to SEVEN Boolean-valued features.
+diagnosisIsDGN3 - T F
+diagnosisIsDGN2 - T F
+diagnosisIsDGN4 - T F
+diagnosisIsDGN6 - T F
+diagnosisIsDGN5 - T F
+diagnosisIsDGN7 - T F
+diagnosisIsDGN1 - T F
+
+// Converted PREV4 by looking at plus/minus one std deviation from the mean.
+lowFVC    - T F
+mediumFVC - T F
+highFVC   - T F
+
+// Converted PREV5  by looking at plus/minus one std deviation from the mean.
+// HOWEVER used 2.0 as the lower threshold since mean - stdDev was less than the minimum value.
+lowVolume    - T F
+mediumVolume - T F
+highVolume   - T F
+
+// Converted PRE6 (see https://en.wikipedia.org/wiki/Performance_status#ECOG.2FWHO.2FZubrod_score)
+// to a 'thermometer scale' (explained in class)/  Ie, PRZ2 = T T, PRZ1 = T F, and PRZ0 = F F (not sure why Wikepedia lists FIVE, though 'death' would be give away).
+ZubrodaAtLeast1 - T F
+ZubrodaAtLeast2 - T F
+
+//PRE7, PRE8, PRE9, PRE10, and PRE11 renamed but otherwise unchanged since already Boolean valued.
+painBeforeSurgery        - T F
+haemoptysisBeforeSurgery - T F 
+dyspnoeaBeforeSurgery    - T F
+coughBeforeSurgery       - T F
+weaknessBeforeSurgery    - T F
+
+// Converted PRe14 converted to a thermometer rep.  OC11 taken to be 'verySmall' and OC13 taken to be 'large.'
+tumorAtLeastSmall  - T F
+tumorAtLeastMedium - T F
+tumorAtLeastLarge  - T F
+
+// PRE17, PRE19, PRE25, and PRE30 renamed but otherwise unchanged since already Boolean valued.
+diabetesMellitus           - T F
+recentMyocardialInfarction - T F 
+peripheralArterialDiseases - T F
+smoker                     - T F
+asthmatic                  - T F
+
+// Converted AGE by looking at plus/minus one std deviation from the mean.
+// Note: 'young' is 'young' with respect to (wrt) this dataset, not wrt the general population.
+young     - T F
+middleAge - T F
+old       - T F
+
+// The class labels (unless stated otherwise, we assume for cs540 HWs, for simplicity, that only TWO values are possible):
+lived
+died
+
+// The original fields, copied verbatim from http://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data
+//  1. DGN: Diagnosis - specific combination of ICD-10 codes for primary and secondary as well multiple tumours if any (DGN3,DGN2,DGN4,DGN6,DGN5,DGN8,DGN1)
+//  2. PRE4: Forced vital capacity - FVC (numeric)
+//  3. PRE5: Volume that has been exhaled at the end of the first second of forced expiration - FEV1 (numeric)
+//  4. PRE6: Performance status - Zubrod scale (PRZ2,PRZ1,PRZ0)
+//  5. PRE7: Pain before surgery (T,F)
+//  6. PRE8: Haemoptysis before surgery (T,F)
+//  7. PRE9: Dyspnoea before surgery (T,F)
+//  8. PRE10: Cough before surgery (T,F)
+//  9. PRE11: Weakness before surgery (T,F)
+// 10. PRE14: T in clinical TNM - size of the original tumour, from OC11 (smallest) to OC14 (largest) (OC11,OC14,OC12,OC13)
+// 11. PRE17: Type 2 DM - diabetes mellitus (T,F)
+// 12. PRE19: MI up to 6 months (T,F)
+// 13. PRE25: PAD - peripheral arterial diseases (T,F)
+// 14. PRE30: Smoking (T,F)
+// 15. PRE32: Asthma (T,F)
+// 16. AGE: Age at surgery (numeric)
+// 17. Risk1Y: 1 year survival period - (T)rue value if died (T,F) 
+
+
+/////////////////////////////
+
+// The number of examples (will read this many in; ok to have more in the file)
+90
+
+// The examples (as mentioned above, we assume, for simplicity, that all features are BOOLEAN-VALUED, 
+// *though the names of the two values might differ across datasets*)
+
+//   First is the example's name, then its category, finally followed
+//   by the values of all of its features (listed in the order of the
+//   feature names above, will be separated by "whitespace"). 
+//   The (boring) names are simply used to concisely identify the examples.
+//   Your decision-tree learner should NOT use these names as a feature (what would happen if you did?).
+
+negTuneEx1     died   F T F F F F F F T F F T F T F F F F T T T F F F F F T F F T F
+posTuneEx1     lived  T F F F F F F F T F T F F T T F T F T T F F F F F F T F F F T
+negTuneEx2     died   T F F F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+negTuneEx3     died   F F T F F F F F T F F T F F F F F F F F T T F F F F T F F F T
+posTuneEx2     lived  F F F F F T F F F T F T F F F F F F F F F F F F F F F F F T F
+posTuneEx3     lived  F F F F T F F F T F F T F T F F F F T F F F F F F F T F F T F
+negTuneEx4     died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx5     died   T F F F F F F F T F T F F T F F F F T F T T F F F F F F F F T
+negTuneEx6     died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTuneEx7     died   T F F F F F F F T F F T F F F F F F F F F F F T F F F F F T F
+negTuneEx8     died   T F F F F F F F T F T F F T F F T F T F T T F F F F T F F F T
+negTuneEx9     died   T F F F F F F F T F F T F T F F F F T F T T F T F F T F F F T
+negTuneEx10    died   F F T F F F F F F T F T F F F F F F F F F F F F F F F F F T F
+negTuneEx11    died   T F F F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+negTuneEx12    died   T F F F F F F F F T F T F T F F F F T F F F F F F F T F F T F
+posTuneEx4     lived  F F T F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+posTuneEx5     lived  T F F F F F F F F T F T F T F F T T T F T T F F F F T F F T F
+negTuneEx13    died   T F F F F F F F F T F T F F F F F F T F T T F F F F T F F T F
+negTuneEx14    died   T F F F F F F F T F T F F T F F F F T T T T F F F F T F F F T
+negTuneEx15    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx16    died   F T F F F F F F F T F T F T F F F F T F F F F F F F T F F T F
+negTuneEx17    died   T F F F F F F F T F F T F T F F T F F F T T F F F F F F F T F
+negTuneEx18    died   F T F F F F F T F F T F F T F F F F T F F F F F F F T F F F T
+negTuneEx19    died   T F F F F F F F T F F T F T F F T F T F T T F F F F T F F F T
+negTuneEx20    died   F T F F F F F F T F F T F T T F F F T T F F F F F F T F F F T
+negTuneEx21    died   T F F F F F F F T F F T F T F F F F T F F F F F F F F F F F T
+negTuneEx22    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTuneEx23    died   T F F F F F F F T F T F F F F F F F F F T T F F F F F F F F T
+negTuneEx24    died   T F F F F F F F T F T F F T F F F F T T F F F F F F T F F F T
+negTuneEx25    died   T F F F F F F T F F T F F T F F F F T T F F F F F F T F F F T
+negTuneEx26    died   T F F F F F F F T F F T F F F F F F F F F F F F F F F F F T F
+posTuneEx6     lived  F F F F T F F F T F F T F F F F F T F F T T F F F F F F F F T
+negTuneEx27    died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTuneEx28    died   T F F F F F F T F F T F F T F F F F T F F F F F F F T F F F T
+negTuneEx29    died   F F T F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+posTuneEx7     lived  T F F F F F F F T F F T F T F T T F F F T T F F F F T F F F T
+negTuneEx30    died   T F F F F F F T F F F T F T F F F F T F T T F F F F T F F T F
+negTuneEx31    died   F T F F F F F F T F F T F F F F F F F F T T F F F F T F F T F
+negTuneEx32    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTuneEx33    died   T F F F F F F F T F F T F T F T T T F F F F F F F F T F F T F
+negTuneEx34    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTuneEx35    died   F F T F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+negTuneEx36    died   T F F F F F F F F T F T F T F F F T T F T T F F F F T F F T F
+negTuneEx37    died   T F F F F F F F T F F T F F F F F F F F F F F F F T T F F F T
+negTuneEx38    died   T F F F F F F F T F T F F F F F F F F F F F F F F F F F F F T
+negTuneEx39    died   T F F F F F F F F T F T F T F F F T T F F F F F F F T F F T F
+negTuneEx40    died   T F F F F F F F T F T F F T F F F F T T T T F F F F T F F F T
+negTuneEx41    died   F F T F F F F F F T F T F F F F F F F F T T F F F F T F F F T
+negTuneEx42    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx43    died   T F F F F F F F T F F T F T F T F F F F F F F F F F T F F F T
+negTuneEx44    died   T F F F F F F F T F F F T F F T F F T F T T F F F F T F F T F
+negTuneEx45    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTuneEx46    died   T F F F F F F F T F F T F T F F T F T F F F F F F F T F F T F
+negTuneEx47    died   F F T F F F F F T F F T F F F F F F F F F F F F F F F F F F T
+negTuneEx48    died   T F F F F F F F T F F T F T T F F F T T T T T F F F T F F F T
+negTuneEx49    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx50    died   F F T F F F F F F T F T F T F F F F T F T T F F F F T F F T F
+negTuneEx51    died   T F F F F F F F T F F T F T F F F F T T T T F F F F T F F F T
+negTuneEx52    died   T F F F F F F F T F F T F T F F T F T F T T F F F F T F F F T
+negTuneEx53    died   T F F F F F F F T F T F F F F F F F F F T T F F F F F F F T F
+negTuneEx54    died   T F F F F F F F T F F T F T F F T F T T T T F F F F T F F F T
+negTuneEx55    died   T F F F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+posTuneEx8     lived  T F F F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+posTuneEx9     lived  T F F F F F F F T F F T F T F T F F T F T T F F F F T F F T F
+posTuneEx10    lived  T F F F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+negTuneEx56    died   F T F F F F F F T F F F T T F F T T T F T T F F F F F F F T F
+negTuneEx57    died   T F F F F F F F T F T F F F F F F F F F F F F F F F T F F T F
+negTuneEx58    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx59    died   T F F F F F F F T F F T F T F F F T T F T T F F F F T F F T F
+negTuneEx60    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx61    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTuneEx62    died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+posTuneEx11    lived  T F F F F F F F T F T F F T F F F F T T T T F T F F T F F T F
+negTuneEx63    died   T F F F F F F T F F T F F T F F T F T F T T F F F F T F F T F
+negTuneEx64    died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F T F
+negTuneEx65    died   T F F F F F F T F F T F F F F F F F F F T T F F F F F F F T F
+negTuneEx66    died   F F T F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+posTuneEx12    lived  T F F F F F F F F T F T F T F F F T T T F F F F F F T F F T F
+negTuneEx67    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTuneEx68    died   T F F F F F F F T F T F F F F F F F F F F F F F F F F F F T F
+negTuneEx69    died   T F F F F F F F F T F T F T F T F F T F T T T F F F T F F T F
+posTuneEx13    lived  F F T F F F F F T F F T F T T F F F T T T T F F F F T F F F T
+negTuneEx70    died   F F T F F F F F T F F T F T F T F F F F T T F F F F T F F T F
+negTuneEx71    died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F F T
+negTuneEx72    died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+negTuneEx73    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F T F F
+negTuneEx74    died   T F F F F F F T F F T F F T F F F F T T F F F F F T T F F T F
+negTuneEx75    died   F F T F F F F F F T F T F T F F F F T F T T F F F F F F F T F
+negTuneEx76    died   T F F F F F F F T F F T F T F F F F T F T T T F F F F F F T F
+negTuneEx77    died   T F F F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+

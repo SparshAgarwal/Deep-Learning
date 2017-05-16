@@ -1,0 +1,63 @@
+// Data from Professor Shavlik's CS CS540 (UW-Madison)
+// The structure of a dataset will be as described below.
+// (we're using a very restricted design for simplicity).
+
+// The number of features:
+4
+
+// The names of the features (attributes describing the person aboard the
+// Titanic when it sank):
+type - passenger crew
+accomodations - regular luxury
+age - adult child
+gender - male female
+
+// The class labels (we assume, for simplicity, that only TWO values are 
+// possible): Whether or not the person in question died on the Titanic
+survived
+died
+
+// The number of examples (will read this many in; ok to have more in the file)
+30
+
+// The examples (we assume, for simplicity, that all features are 
+// BINARY-VALUED)
+//   First is the example's name, then its category, finally followed
+//   by the values of all of its features (listed in the order of the
+//   feature names above, will be separated by "whitespace"). 
+//   The (boring) names are simply used to concisely identify the examples
+//   (eg, during debugging).
+
+// You may assume that the feature values are only the ones specified above
+// (ie, we will not be checking if you handle illegal input files).
+
+trainEx71	died     passenger regular adult male
+trainEx72	died     crew regular adult male
+trainEx73	died     crew regular adult male
+trainEx74	survived crew regular adult male
+trainEx75	died     crew regular adult male
+trainEx76	survived passenger luxury adult female
+trainEx77	died     crew regular adult male
+trainEx78	survived passenger regular adult female
+trainEx79	died     passenger luxury adult male
+trainEx80	survived passenger luxury adult female
+trainEx81	died     passenger regular adult male
+trainEx82	died     crew regular adult male
+trainEx83	died     passenger regular adult male
+trainEx84	died     passenger regular adult female
+trainEx85	survived passenger luxury adult female
+trainEx86	died     crew regular adult male
+trainEx87	died     passenger regular adult female
+trainEx88	died     crew regular adult male
+trainEx89	died     passenger regular adult female
+trainEx90	survived passenger regular adult female
+trainEx91	died     crew regular adult male
+trainEx92	survived crew regular adult male
+trainEx93	died     crew regular adult male
+trainEx94	survived passenger regular adult female
+trainEx95	survived crew regular adult male
+trainEx96	died     crew regular adult male
+trainEx97	died     crew regular adult male
+trainEx98	died     crew regular adult male
+trainEx99	survived passenger luxury adult female
+trainEx100	died     passenger luxury adult male

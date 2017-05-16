@@ -1,0 +1,500 @@
+0
+Accuracy of Beta: 0.45933562428407787
+Accuracy of Helix: 0.4272251308900524
+Accuracy of Coil: 0.78369140625
+Overall accuracy: 0.6228070175438597
+1
+Accuracy of Beta: 0.44215349369988544
+Accuracy of Helix: 0.4387434554973822
+Accuracy of Coil: 0.78955078125
+Overall accuracy: 0.6248710010319918
+2
+Accuracy of Beta: 0.44673539518900346
+Accuracy of Helix: 0.44712041884816756
+Accuracy of Coil: 0.7783203125
+Overall accuracy: 0.6220330237358102
+3
+Accuracy of Beta: 0.5005727376861397
+Accuracy of Helix: 0.3643979057591623
+Accuracy of Coil: 0.7900390625
+Overall accuracy: 0.6199690402476781
+4
+Accuracy of Beta: 0.4238258877434135
+Accuracy of Helix: 0.4324607329842932
+Accuracy of Coil: 0.79248046875
+Overall accuracy: 0.6207430340557275
+5
+Accuracy of Beta: 0.4822451317296678
+Accuracy of Helix: 0.39057591623036647
+Accuracy of Coil: 0.79443359375
+Overall accuracy: 0.6246130030959752
+6
+Accuracy of Beta: 0.47308132875143183
+Accuracy of Helix: 0.41047120418848165
+Accuracy of Coil: 0.77685546875
+Overall accuracy: 0.6181630546955624
+7
+Accuracy of Beta: 0.4662084765177549
+Accuracy of Helix: 0.40523560209424087
+Accuracy of Coil: 0.78564453125
+Overall accuracy: 0.6199690402476781
+8
+Accuracy of Beta: 0.5280641466208477
+Accuracy of Helix: 0.39162303664921466
+Accuracy of Coil: 0.7626953125
+Overall accuracy: 0.618421052631579
+9
+Accuracy of Beta: 0.5315005727376861
+Accuracy of Helix: 0.3643979057591623
+Accuracy of Coil: 0.7626953125
+Overall accuracy: 0.6124871001031992
+10
+Accuracy of Beta: 0.39862542955326463
+Accuracy of Helix: 0.48795811518324606
+Accuracy of Coil: 0.77734375
+Overall accuracy: 0.6207430340557275
+11
+Accuracy of Beta: 0.4352806414662085
+Accuracy of Helix: 0.42198952879581153
+Accuracy of Coil: 0.79638671875
+Overall accuracy: 0.6228070175438597
+12
+Accuracy of Beta: 0.47079037800687284
+Accuracy of Helix: 0.431413612565445
+Accuracy of Coil: 0.77392578125
+Overall accuracy: 0.6212590299277606
+13
+Accuracy of Beta: 0.4936998854524628
+Accuracy of Helix: 0.374869109947644
+Accuracy of Coil: 0.78369140625
+Overall accuracy: 0.6176470588235294
+14
+Accuracy of Beta: 0.4306987399770905
+Accuracy of Helix: 0.44397905759162304
+Accuracy of Coil: 0.79150390625
+Overall accuracy: 0.6246130030959752
+15
+Accuracy of Beta: 0.4833906071019473
+Accuracy of Helix: 0.4094240837696335
+Accuracy of Coil: 0.7724609375
+Overall accuracy: 0.6179050567595459
+16
+Accuracy of Beta: 0.5257731958762887
+Accuracy of Helix: 0.3947643979057592
+Accuracy of Coil: 0.75390625
+Overall accuracy: 0.6140350877192983
+17
+Accuracy of Beta: 0.4742268041237113
+Accuracy of Helix: 0.40523560209424087
+Accuracy of Coil: 0.79345703125
+Overall accuracy: 0.6259029927760578
+18
+Accuracy of Beta: 0.5429553264604811
+Accuracy of Helix: 0.374869109947644
+Accuracy of Coil: 0.76123046875
+Overall accuracy: 0.6168730650154799
+19
+Accuracy of Beta: 0.4043528064146621
+Accuracy of Helix: 0.42513089005235605
+Accuracy of Coil: 0.79736328125
+Overall accuracy: 0.6171310629514963
+20
+Accuracy of Beta: 0.41122565864833904
+Accuracy of Helix: 0.4492146596858639
+Accuracy of Coil: 0.7998046875
+Overall accuracy: 0.6259029927760578
+21
+Accuracy of Beta: 0.45933562428407787
+Accuracy of Helix: 0.4806282722513089
+Accuracy of Coil: 0.7724609375
+Overall accuracy: 0.6300309597523219
+22
+Accuracy of Beta: 0.5177548682703322
+Accuracy of Helix: 0.38848167539267014
+Accuracy of Coil: 0.76708984375
+Overall accuracy: 0.6176470588235294
+23
+Accuracy of Beta: 0.4765177548682703
+Accuracy of Helix: 0.374869109947644
+Accuracy of Coil: 0.79736328125
+Overall accuracy: 0.6210010319917441
+24
+Accuracy of Beta: 0.5097365406643757
+Accuracy of Helix: 0.40209424083769635
+Accuracy of Coil: 0.76318359375
+Overall accuracy: 0.6171310629514963
+25
+Accuracy of Beta: 0.4146620847651776
+Accuracy of Helix: 0.4827225130890052
+Accuracy of Coil: 0.77783203125
+Overall accuracy: 0.6233230134158927
+26
+Accuracy of Beta: 0.5097365406643757
+Accuracy of Helix: 0.4073298429319372
+Accuracy of Coil: 0.75732421875
+Overall accuracy: 0.6153250773993808
+27
+Accuracy of Beta: 0.44329896907216493
+Accuracy of Helix: 0.44293193717277485
+Accuracy of Coil: 0.79150390625
+Overall accuracy: 0.6271929824561403
+28
+Accuracy of Beta: 0.5441008018327605
+Accuracy of Helix: 0.387434554973822
+Accuracy of Coil: 0.7548828125
+Overall accuracy: 0.6168730650154799
+29
+Accuracy of Beta: 0.4146620847651776
+Accuracy of Helix: 0.4963350785340314
+Accuracy of Coil: 0.78173828125
+Overall accuracy: 0.6287409700722394
+30
+Accuracy of Beta: 0.5223367697594502
+Accuracy of Helix: 0.387434554973822
+Accuracy of Coil: 0.76318359375
+Overall accuracy: 0.6163570691434469
+31
+Accuracy of Beta: 0.41122565864833904
+Accuracy of Helix: 0.48586387434554973
+Accuracy of Coil: 0.77978515625
+Overall accuracy: 0.6243550051599587
+32
+Accuracy of Beta: 0.4856815578465063
+Accuracy of Helix: 0.41465968586387436
+Accuracy of Coil: 0.75830078125
+Overall accuracy: 0.6122291021671826
+33
+Accuracy of Beta: 0.5028636884306987
+Accuracy of Helix: 0.387434554973822
+Accuracy of Coil: 0.76953125
+Overall accuracy: 0.6153250773993808
+34
+Accuracy of Beta: 0.44100801832760594
+Accuracy of Helix: 0.3706806282722513
+Accuracy of Coil: 0.814453125
+Overall accuracy: 0.6210010319917441
+35
+Accuracy of Beta: 0.5063001145475372
+Accuracy of Helix: 0.38848167539267014
+Accuracy of Coil: 0.7685546875
+Overall accuracy: 0.6158410732714138
+36
+Accuracy of Beta: 0.4959908361970218
+Accuracy of Helix: 0.38010471204188484
+Accuracy of Coil: 0.78076171875
+Overall accuracy: 0.6179050567595459
+37
+Accuracy of Beta: 0.46964490263459335
+Accuracy of Helix: 0.41047120418848165
+Accuracy of Coil: 0.783203125
+Overall accuracy: 0.6207430340557275
+38
+Accuracy of Beta: 0.4948453608247423
+Accuracy of Helix: 0.42408376963350786
+Accuracy of Coil: 0.75927734375
+Overall accuracy: 0.6171310629514963
+39
+Accuracy of Beta: 0.424971363115693
+Accuracy of Helix: 0.4774869109947644
+Accuracy of Coil: 0.78173828125
+Overall accuracy: 0.6264189886480909
+40
+Accuracy of Beta: 0.48911798396334477
+Accuracy of Helix: 0.4293193717277487
+Accuracy of Coil: 0.75634765625
+Overall accuracy: 0.6155830753353974
+41
+Accuracy of Beta: 0.5532646048109966
+Accuracy of Helix: 0.3612565445026178
+Accuracy of Coil: 0.76953125
+Overall accuracy: 0.6202270381836945
+42
+Accuracy of Beta: 0.3928980526918671
+Accuracy of Helix: 0.4607329842931937
+Accuracy of Coil: 0.7978515625
+Overall accuracy: 0.6235810113519091
+43
+Accuracy of Beta: 0.3848797250859107
+Accuracy of Helix: 0.48900523560209425
+Accuracy of Coil: 0.78466796875
+Overall accuracy: 0.6217750257997936
+44
+Accuracy of Beta: 0.5292096219931272
+Accuracy of Helix: 0.3675392670157068
+Accuracy of Coil: 0.76953125
+Overall accuracy: 0.6163570691434469
+45
+Accuracy of Beta: 0.4032073310423826
+Accuracy of Helix: 0.43664921465968587
+Accuracy of Coil: 0.794921875
+Overall accuracy: 0.618421052631579
+46
+Accuracy of Beta: 0.5051546391752577
+Accuracy of Helix: 0.41047120418848165
+Accuracy of Coil: 0.763671875
+Overall accuracy: 0.618421052631579
+47
+Accuracy of Beta: 0.5085910652920962
+Accuracy of Helix: 0.381151832460733
+Accuracy of Coil: 0.78564453125
+Overall accuracy: 0.6235810113519091
+48
+Accuracy of Beta: 0.49713631156930127
+Accuracy of Helix: 0.431413612565445
+Accuracy of Coil: 0.763671875
+Overall accuracy: 0.6217750257997936
+49
+Accuracy of Beta: 0.5154639175257731
+Accuracy of Helix: 0.39895287958115183
+Accuracy of Coil: 0.76416015625
+Overall accuracy: 0.6181630546955624
+50
+Accuracy of Beta: 0.5360824742268041
+Accuracy of Helix: 0.41047120418848165
+Accuracy of Coil: 0.744140625
+Overall accuracy: 0.6150670794633643
+51
+Accuracy of Beta: 0.4581901489117984
+Accuracy of Helix: 0.4397905759162304
+Accuracy of Coil: 0.77978515625
+Overall accuracy: 0.6235810113519091
+52
+Accuracy of Beta: 0.4329896907216495
+Accuracy of Helix: 0.3706806282722513
+Accuracy of Coil: 0.802734375
+Overall accuracy: 0.6130030959752322
+53
+Accuracy of Beta: 0.4742268041237113
+Accuracy of Helix: 0.4492146596858639
+Accuracy of Coil: 0.7705078125
+Overall accuracy: 0.6246130030959752
+54
+Accuracy of Beta: 0.5429553264604811
+Accuracy of Helix: 0.4041884816753927
+Accuracy of Coil: 0.75390625
+Overall accuracy: 0.6202270381836945
+55
+Accuracy of Beta: 0.47995418098510884
+Accuracy of Helix: 0.387434554973822
+Accuracy of Coil: 0.78125
+Overall accuracy: 0.6163570691434469
+56
+Accuracy of Beta: 0.5017182130584192
+Accuracy of Helix: 0.38010471204188484
+Accuracy of Coil: 0.7822265625
+Overall accuracy: 0.6199690402476781
+57
+Accuracy of Beta: 0.5040091638029782
+Accuracy of Helix: 0.4167539267015707
+Accuracy of Coil: 0.759765625
+Overall accuracy: 0.6176470588235294
+58
+Accuracy of Beta: 0.4329896907216495
+Accuracy of Helix: 0.43664921465968587
+Accuracy of Coil: 0.7900390625
+Overall accuracy: 0.6225490196078431
+59
+Accuracy of Beta: 0.4558991981672394
+Accuracy of Helix: 0.45549738219895286
+Accuracy of Coil: 0.78271484375
+Overall accuracy: 0.628482972136223
+60
+Accuracy of Beta: 0.43757159221076747
+Accuracy of Helix: 0.42408376963350786
+Accuracy of Coil: 0.80859375
+Overall accuracy: 0.6302889576883385
+61
+Accuracy of Beta: 0.5120274914089347
+Accuracy of Helix: 0.40523560209424087
+Accuracy of Coil: 0.7783203125
+Overall accuracy: 0.6264189886480909
+62
+Accuracy of Beta: 0.4822451317296678
+Accuracy of Helix: 0.42198952879581153
+Accuracy of Coil: 0.76416015625
+Overall accuracy: 0.6163570691434469
+63
+Accuracy of Beta: 0.436426116838488
+Accuracy of Helix: 0.40523560209424087
+Accuracy of Coil: 0.80419921875
+Overall accuracy: 0.6230650154798761
+64
+Accuracy of Beta: 0.5555555555555556
+Accuracy of Helix: 0.393717277486911
+Accuracy of Coil: 0.74658203125
+Overall accuracy: 0.6166150670794633
+65
+Accuracy of Beta: 0.4043528064146621
+Accuracy of Helix: 0.450261780104712
+Accuracy of Coil: 0.79443359375
+Overall accuracy: 0.6217750257997936
+66
+Accuracy of Beta: 0.49828178694158076
+Accuracy of Helix: 0.39162303664921466
+Accuracy of Coil: 0.78125
+Overall accuracy: 0.621517027863777
+67
+Accuracy of Beta: 0.44902634593356244
+Accuracy of Helix: 0.3947643979057592
+Accuracy of Coil: 0.7958984375
+Overall accuracy: 0.618937048503612
+68
+Accuracy of Beta: 0.5189003436426117
+Accuracy of Helix: 0.4198952879581152
+Accuracy of Coil: 0.75439453125
+Overall accuracy: 0.618937048503612
+69
+Accuracy of Beta: 0.40893470790378006
+Accuracy of Helix: 0.4073298429319372
+Accuracy of Coil: 0.77587890625
+Overall accuracy: 0.6024251805985552
+70
+Accuracy of Beta: 0.47308132875143183
+Accuracy of Helix: 0.3947643979057592
+Accuracy of Coil: 0.77783203125
+Overall accuracy: 0.6148090815273478
+71
+Accuracy of Beta: 0.5383734249713631
+Accuracy of Helix: 0.39162303664921466
+Accuracy of Coil: 0.75341796875
+Overall accuracy: 0.6158410732714138
+72
+Accuracy of Beta: 0.436426116838488
+Accuracy of Helix: 0.43455497382198954
+Accuracy of Coil: 0.79345703125
+Overall accuracy: 0.6246130030959752
+73
+Accuracy of Beta: 0.4570446735395189
+Accuracy of Helix: 0.38952879581151834
+Accuracy of Coil: 0.794921875
+Overall accuracy: 0.618937048503612
+74
+Accuracy of Beta: 0.413516609392898
+Accuracy of Helix: 0.4586387434554974
+Accuracy of Coil: 0.78955078125
+Overall accuracy: 0.6233230134158927
+75
+Accuracy of Beta: 0.4558991981672394
+Accuracy of Helix: 0.4387434554973822
+Accuracy of Coil: 0.771484375
+Overall accuracy: 0.618421052631579
+76
+Accuracy of Beta: 0.46849942726231386
+Accuracy of Helix: 0.393717277486911
+Accuracy of Coil: 0.78857421875
+Overall accuracy: 0.6191950464396285
+77
+Accuracy of Beta: 0.44902634593356244
+Accuracy of Helix: 0.47539267015706804
+Accuracy of Coil: 0.7724609375
+Overall accuracy: 0.6264189886480909
+78
+Accuracy of Beta: 0.4524627720504009
+Accuracy of Helix: 0.418848167539267
+Accuracy of Coil: 0.79248046875
+Overall accuracy: 0.6238390092879257
+79
+Accuracy of Beta: 0.5051546391752577
+Accuracy of Helix: 0.36858638743455496
+Accuracy of Coil: 0.77685546875
+Overall accuracy: 0.6150670794633643
+80
+Accuracy of Beta: 0.5051546391752577
+Accuracy of Helix: 0.393717277486911
+Accuracy of Coil: 0.76611328125
+Overall accuracy: 0.6155830753353974
+81
+Accuracy of Beta: 0.424971363115693
+Accuracy of Helix: 0.06596858638743455
+Accuracy of Coil: 0.82275390625
+Overall accuracy: 0.5466976264189887
+82
+Accuracy of Beta: 0.41122565864833904
+Accuracy of Helix: 0.4513089005235602
+Accuracy of Coil: 0.79296875
+Overall accuracy: 0.6228070175438597
+83
+Accuracy of Beta: 0.49942726231386025
+Accuracy of Helix: 0.44502617801047123
+Accuracy of Coil: 0.76806640625
+Overall accuracy: 0.6279669762641898
+84
+Accuracy of Beta: 0.45933562428407787
+Accuracy of Helix: 0.42408376963350786
+Accuracy of Coil: 0.7734375
+Overall accuracy: 0.6166150670794633
+85
+Accuracy of Beta: 0.41809851088201605
+Accuracy of Helix: 0.4397905759162304
+Accuracy of Coil: 0.798828125
+Overall accuracy: 0.6246130030959752
+86
+Accuracy of Beta: 0.5429553264604811
+Accuracy of Helix: 0.3738219895287958
+Accuracy of Coil: 0.76220703125
+Overall accuracy: 0.6171310629514963
+87
+Accuracy of Beta: 0.4570446735395189
+Accuracy of Helix: 0.41465968586387436
+Accuracy of Coil: 0.7724609375
+Overall accuracy: 0.6132610939112487
+88
+Accuracy of Beta: 0.46048109965635736
+Accuracy of Helix: 0.43455497382198954
+Accuracy of Coil: 0.78564453125
+Overall accuracy: 0.6259029927760578
+89
+Accuracy of Beta: 0.46849942726231386
+Accuracy of Helix: 0.4293193717277487
+Accuracy of Coil: 0.78369140625
+Overall accuracy: 0.6253869969040248
+90
+Accuracy of Beta: 0.47995418098510884
+Accuracy of Helix: 0.3643979057591623
+Accuracy of Coil: 0.78759765625
+Overall accuracy: 0.6140350877192983
+91
+Accuracy of Beta: 0.43986254295532645
+Accuracy of Helix: 0.4178010471204188
+Accuracy of Coil: 0.7900390625
+Overall accuracy: 0.619453044375645
+92
+Accuracy of Beta: 0.5211912943871707
+Accuracy of Helix: 0.41361256544502617
+Accuracy of Coil: 0.74853515625
+Overall accuracy: 0.6148090815273478
+93
+Accuracy of Beta: 0.4948453608247423
+Accuracy of Helix: 0.38848167539267014
+Accuracy of Coil: 0.78564453125
+Overall accuracy: 0.6222910216718266
+94
+Accuracy of Beta: 0.5005727376861397
+Accuracy of Helix: 0.3717277486910995
+Accuracy of Coil: 0.7890625
+Overall accuracy: 0.6212590299277606
+95
+Accuracy of Beta: 0.424971363115693
+Accuracy of Helix: 0.4157068062827225
+Accuracy of Coil: 0.7939453125
+Overall accuracy: 0.6176470588235294
+96
+Accuracy of Beta: 0.4833906071019473
+Accuracy of Helix: 0.4031413612565445
+Accuracy of Coil: 0.77880859375
+Overall accuracy: 0.6197110423116615
+97
+Accuracy of Beta: 0.5017182130584192
+Accuracy of Helix: 0.4041884816753927
+Accuracy of Coil: 0.76416015625
+Overall accuracy: 0.6163570691434469
+98
+Accuracy of Beta: 0.47995418098510884
+Accuracy of Helix: 0.393717277486911
+Accuracy of Coil: 0.787109375
+Overall accuracy: 0.6210010319917441
+99
+Accuracy of Beta: 0.5040091638029782
+Accuracy of Helix: 0.41151832460732984
+Accuracy of Coil: 0.763671875
+Overall accuracy: 0.618421052631579

@@ -1,0 +1,14 @@
+java Lab3
+The trainset contains 554 examples.  Took 352 milliseconds.
+The  testset contains 180 examples.  Took 54 milliseconds.
+The  tuneset contains 178 examples.  Took 53 milliseconds.
+
+The input vector size is 4,096.
+
+Converted 554 TRAIN examples to feature vectors. Took 732 milliseconds.
+Converted 180 TUNE  examples to feature vectors. Took 734 milliseconds.
+Converted 178 TEST  examples to feature vectors. Took 27 milliseconds.
+
+Time to start learning!
+Using: ETA = 0.100000, patience = 100, epochStep = 10
+Makefile:5: recipe for target 'test' failed

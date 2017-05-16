@@ -1,0 +1,566 @@
+java Lab3_wayne_sparsh
+The trainset contains 554 examples.  Took 223 milliseconds.
+The  testset contains 180 examples.  Took 30 milliseconds.
+The  tuneset contains 178 examples.  Took 28 milliseconds.
+
+The input vector size is 4,096.
+
+Converted 554 TRAIN examples to feature vectors. Took 113 milliseconds.
+Converted 180 TUNE  examples to feature vectors. Took 73 milliseconds.
+Converted 178 TEST  examples to feature vectors. Took 19 milliseconds.
+
+Time to start learning!
+Convolutional Neural Network Deep Training
+Data Info: useRGB = true, imageSize = 32, fractionOfTrainingToUse = 1.00
+Using: ETA = 0.010000, Dropout = 0.00, Patience = 50, BatchSize = 1.
+
+
+Layer1: Convolutional Layer
+Input Dimensions: 32 x 32 x 4
+Output Dimensions: 28 x 28 x 20
+
+Layer2: Pooling Layer
+Input Dimensions: 28 x 28 x 20
+Output Dimensions: 14 x 14 x 20
+
+Layer3: Convolutional Layer
+Input Dimensions: 14 x 14 x 20
+Output Dimensions: 10 x 10 x 20
+
+Layer4: Pooling Layer
+Input Dimensions: 10 x 10 x 20
+Output Dimensions: 5 x 5 x 20
+
+Layer5: Output Layer
+Input Dimensions: 5 x 5 x 20
+Output Dimensions: 6 x 1 x 1
+26.8953%
+27.7778%
+25.8427%
+Done with Epoch # 0.  Took 14 seconds (14 seconds overall).
+36.4621%
+37.2222%
+41.0112%
+Done with Epoch # 1.  Took 13 seconds (27 seconds overall).
+37.3646%
+37.2222%
+37.0787%
+Done with Epoch # 2.  Took 13 seconds (40 seconds overall).
+40.9747%
+42.7778%
+47.1910%
+Done with Epoch # 3.  Took 13 seconds (54 seconds overall).
+47.1119%
+51.6667%
+51.1236%
+Done with Epoch # 4.  Took 13 seconds (1 minutes and 7 seconds overall).
+51.8051%
+53.3333%
+56.1798%
+Done with Epoch # 5.  Took 13 seconds (1 minutes and 20 seconds overall).
+52.5271%
+53.8889%
+57.3034%
+Done with Epoch # 6.  Took 13 seconds (1 minutes and 33 seconds overall).
+51.4440%
+53.3333%
+55.6180%
+Done with Epoch # 7.  Took 13 seconds (1 minutes and 46 seconds overall).
+52.1661%
+53.3333%
+58.4270%
+Done with Epoch # 8.  Took 13 seconds (1 minutes and 58 seconds overall).
+57.5812%
+62.7778%
+65.1685%
+Done with Epoch # 9.  Took 13 seconds (2 minutes and 11 seconds overall).
+56.4982%
+59.4444%
+64.6067%
+Done with Epoch # 10.  Took 13 seconds (2 minutes and 24 seconds overall).
+58.8448%
+65.5556%
+71.9101%
+Done with Epoch # 11.  Took 13 seconds (2 minutes and 37 seconds overall).
+59.5668%
+65.5556%
+69.1011%
+Done with Epoch # 12.  Took 13 seconds (2 minutes and 50 seconds overall).
+56.6787%
+57.7778%
+63.4831%
+Done with Epoch # 13.  Took 13 seconds (3 minutes and 3 seconds overall).
+54.6931%
+58.8889%
+64.6067%
+Done with Epoch # 14.  Took 13 seconds (3 minutes and 16 seconds overall).
+59.2058%
+68.3333%
+71.3483%
+Done with Epoch # 15.  Took 13 seconds (3 minutes and 29 seconds overall).
+64.9819%
+68.8889%
+73.0337%
+Done with Epoch # 16.  Took 13 seconds (3 minutes and 42 seconds overall).
+60.4693%
+63.8889%
+71.9101%
+Done with Epoch # 17.  Took 13 seconds (3 minutes and 55 seconds overall).
+66.0650%
+70.0000%
+73.0337%
+Done with Epoch # 18.  Took 13 seconds (4 minutes and 8 seconds overall).
+64.6209%
+71.6667%
+75.2809%
+Done with Epoch # 19.  Took 13 seconds (4 minutes and 21 seconds overall).
+61.9134%
+70.0000%
+71.3483%
+Done with Epoch # 20.  Took 13 seconds (4 minutes and 34 seconds overall).
+70.2166%
+75.0000%
+76.9663%
+Done with Epoch # 21.  Took 13 seconds (4 minutes and 47 seconds overall).
+68.5921%
+73.3333%
+74.7191%
+Done with Epoch # 22.  Took 13 seconds (5 minutes and 286 milliseconds overall).
+68.9531%
+76.6667%
+76.9663%
+Done with Epoch # 23.  Took 13 seconds (5 minutes and 13 seconds overall).
+69.3141%
+72.2222%
+76.4045%
+Done with Epoch # 24.  Took 13 seconds (5 minutes and 26 seconds overall).
+70.7581%
+72.7778%
+76.9663%
+Done with Epoch # 25.  Took 13 seconds (5 minutes and 39 seconds overall).
+69.6751%
+77.7778%
+76.4045%
+Done with Epoch # 26.  Took 13 seconds (5 minutes and 52 seconds overall).
+71.6606%
+79.4444%
+77.5281%
+Done with Epoch # 27.  Took 14 seconds (6 minutes and 6 seconds overall).
+70.2166%
+77.7778%
+78.0899%
+Done with Epoch # 28.  Took 13 seconds (6 minutes and 19 seconds overall).
+72.0217%
+81.6667%
+78.6517%
+Done with Epoch # 29.  Took 13 seconds (6 minutes and 32 seconds overall).
+70.3971%
+77.2222%
+78.0899%
+Done with Epoch # 30.  Took 13 seconds (6 minutes and 45 seconds overall).
+73.2852%
+80.0000%
+78.0899%
+Done with Epoch # 31.  Took 13 seconds (6 minutes and 59 seconds overall).
+70.9386%
+77.7778%
+76.4045%
+Done with Epoch # 32.  Took 13 seconds (7 minutes and 12 seconds overall).
+74.1877%
+80.5556%
+80.3371%
+Done with Epoch # 33.  Took 13 seconds (7 minutes and 25 seconds overall).
+74.1877%
+78.8889%
+75.8427%
+Done with Epoch # 34.  Took 13 seconds (7 minutes and 39 seconds overall).
+75.9928%
+82.7778%
+78.0899%
+Done with Epoch # 35.  Took 13 seconds (7 minutes and 52 seconds overall).
+72.3827%
+75.0000%
+78.0899%
+Done with Epoch # 36.  Took 13 seconds (8 minutes and 5 seconds overall).
+74.7292%
+83.8889%
+77.5281%
+Done with Epoch # 37.  Took 13 seconds (8 minutes and 19 seconds overall).
+72.3827%
+80.0000%
+75.8427%
+Done with Epoch # 38.  Took 13 seconds (8 minutes and 32 seconds overall).
+76.5343%
+82.7778%
+76.9663%
+Done with Epoch # 39.  Took 13 seconds (8 minutes and 45 seconds overall).
+76.8953%
+82.2222%
+79.2135%
+Done with Epoch # 40.  Took 13 seconds (8 minutes and 59 seconds overall).
+75.2708%
+81.1111%
+75.8427%
+Done with Epoch # 41.  Took 13 seconds (9 minutes and 12 seconds overall).
+77.4368%
+81.1111%
+77.5281%
+Done with Epoch # 42.  Took 13 seconds (9 minutes and 25 seconds overall).
+77.0758%
+83.3333%
+77.5281%
+Done with Epoch # 43.  Took 13 seconds (9 minutes and 38 seconds overall).
+78.3394%
+83.8889%
+80.8989%
+Done with Epoch # 44.  Took 13 seconds (9 minutes and 52 seconds overall).
+74.3682%
+79.4444%
+75.8427%
+Done with Epoch # 45.  Took 13 seconds (10 minutes and 5 seconds overall).
+78.5199%
+83.8889%
+79.2135%
+Done with Epoch # 46.  Took 13 seconds (10 minutes and 18 seconds overall).
+78.3394%
+81.6667%
+82.0225%
+Done with Epoch # 47.  Took 13 seconds (10 minutes and 31 seconds overall).
+77.7978%
+83.3333%
+80.3371%
+Done with Epoch # 48.  Took 13 seconds (10 minutes and 44 seconds overall).
+78.7004%
+84.4444%
+82.0225%
+Done with Epoch # 49.  Took 13 seconds (10 minutes and 58 seconds overall).
+77.9783%
+81.6667%
+81.4607%
+Done with Epoch # 50.  Took 13 seconds (11 minutes and 11 seconds overall).
+78.3394%
+80.0000%
+79.7753%
+Done with Epoch # 51.  Took 13 seconds (11 minutes and 24 seconds overall).
+79.2419%
+81.6667%
+81.4607%
+Done with Epoch # 52.  Took 13 seconds (11 minutes and 38 seconds overall).
+81.2274%
+82.7778%
+78.0899%
+Done with Epoch # 53.  Took 13 seconds (11 minutes and 51 seconds overall).
+83.0325%
+81.6667%
+82.0225%
+Done with Epoch # 54.  Took 13 seconds (12 minutes and 4 seconds overall).
+81.9495%
+82.7778%
+80.8989%
+Done with Epoch # 55.  Took 13 seconds (12 minutes and 17 seconds overall).
+81.5884%
+83.3333%
+82.0225%
+Done with Epoch # 56.  Took 13 seconds (12 minutes and 31 seconds overall).
+83.0325%
+81.6667%
+82.0225%
+Done with Epoch # 57.  Took 13 seconds (12 minutes and 44 seconds overall).
+81.7690%
+82.7778%
+79.7753%
+Done with Epoch # 58.  Took 13 seconds (12 minutes and 57 seconds overall).
+81.5884%
+81.1111%
+82.5843%
+Done with Epoch # 59.  Took 13 seconds (13 minutes and 10 seconds overall).
+80.3249%
+84.4444%
+82.0225%
+Done with Epoch # 60.  Took 13 seconds (13 minutes and 23 seconds overall).
+83.0325%
+81.6667%
+81.4607%
+Done with Epoch # 61.  Took 13 seconds (13 minutes and 36 seconds overall).
+83.0325%
+82.7778%
+80.3371%
+Done with Epoch # 62.  Took 13 seconds (13 minutes and 49 seconds overall).
+82.3105%
+82.7778%
+82.0225%
+Done with Epoch # 63.  Took 13 seconds (14 minutes and 3 seconds overall).
+83.2130%
+81.6667%
+83.1461%
+Done with Epoch # 64.  Took 13 seconds (14 minutes and 16 seconds overall).
+82.6715%
+81.6667%
+77.5281%
+Done with Epoch # 65.  Took 13 seconds (14 minutes and 29 seconds overall).
+83.3935%
+84.4444%
+83.1461%
+Done with Epoch # 66.  Took 13 seconds (14 minutes and 43 seconds overall).
+84.6570%
+83.3333%
+82.5843%
+Done with Epoch # 67.  Took 13 seconds (14 minutes and 56 seconds overall).
+83.2130%
+83.8889%
+81.4607%
+Done with Epoch # 68.  Took 13 seconds (15 minutes and 10 seconds overall).
+84.4765%
+82.2222%
+80.3371%
+Done with Epoch # 69.  Took 13 seconds (15 minutes and 23 seconds overall).
+83.7545%
+83.3333%
+79.2135%
+Done with Epoch # 70.  Took 13 seconds (15 minutes and 36 seconds overall).
+85.0181%
+84.4444%
+83.7079%
+Done with Epoch # 71.  Took 13 seconds (15 minutes and 50 seconds overall).
+85.1986%
+83.8889%
+78.6517%
+Done with Epoch # 72.  Took 14 seconds (16 minutes and 3 seconds overall).
+85.3791%
+82.2222%
+80.3371%
+Done with Epoch # 73.  Took 13 seconds (16 minutes and 17 seconds overall).
+86.2816%
+81.6667%
+82.5843%
+Done with Epoch # 74.  Took 14 seconds (16 minutes and 31 seconds overall).
+85.5596%
+82.7778%
+79.2135%
+Done with Epoch # 75.  Took 14 seconds (16 minutes and 44 seconds overall).
+84.8375%
+85.0000%
+83.7079%
+Done with Epoch # 76.  Took 13 seconds (16 minutes and 57 seconds overall).
+86.6426%
+82.2222%
+83.1461%
+Done with Epoch # 77.  Took 13 seconds (17 minutes and 10 seconds overall).
+85.9206%
+82.7778%
+80.8989%
+Done with Epoch # 78.  Took 13 seconds (17 minutes and 23 seconds overall).
+87.7256%
+83.3333%
+81.4607%
+Done with Epoch # 79.  Took 13 seconds (17 minutes and 36 seconds overall).
+86.1011%
+81.6667%
+81.4607%
+Done with Epoch # 80.  Took 13 seconds (17 minutes and 49 seconds overall).
+84.2960%
+83.8889%
+81.4607%
+Done with Epoch # 81.  Took 14 seconds (18 minutes and 3 seconds overall).
+87.7256%
+82.7778%
+80.8989%
+Done with Epoch # 82.  Took 14 seconds (18 minutes and 16 seconds overall).
+87.0036%
+84.4444%
+81.4607%
+Done with Epoch # 83.  Took 14 seconds (18 minutes and 30 seconds overall).
+87.0036%
+83.8889%
+81.4607%
+Done with Epoch # 84.  Took 14 seconds (18 minutes and 44 seconds overall).
+88.0866%
+80.5556%
+83.1461%
+Done with Epoch # 85.  Took 14 seconds (18 minutes and 57 seconds overall).
+86.6426%
+83.8889%
+82.0225%
+Done with Epoch # 86.  Took 13 seconds (19 minutes and 11 seconds overall).
+85.7401%
+83.3333%
+80.8989%
+Done with Epoch # 87.  Took 14 seconds (19 minutes and 24 seconds overall).
+86.4621%
+85.0000%
+82.5843%
+Done with Epoch # 88.  Took 14 seconds (19 minutes and 38 seconds overall).
+88.6282%
+82.2222%
+83.1461%
+Done with Epoch # 89.  Took 14 seconds (19 minutes and 51 seconds overall).
+86.8231%
+82.2222%
+82.0225%
+Done with Epoch # 90.  Took 13 seconds (20 minutes and 5 seconds overall).
+89.1697%
+83.3333%
+84.2697%
+Done with Epoch # 91.  Took 14 seconds (20 minutes and 18 seconds overall).
+87.9061%
+80.0000%
+82.5843%
+Done with Epoch # 92.  Took 14 seconds (20 minutes and 32 seconds overall).
+87.3646%
+83.3333%
+82.0225%
+Done with Epoch # 93.  Took 14 seconds (20 minutes and 45 seconds overall).
+88.0866%
+80.5556%
+80.3371%
+Done with Epoch # 94.  Took 13 seconds (20 minutes and 59 seconds overall).
+87.1841%
+83.8889%
+82.0225%
+Done with Epoch # 95.  Took 14 seconds (21 minutes and 12 seconds overall).
+88.6282%
+82.7778%
+82.0225%
+Done with Epoch # 96.  Took 14 seconds (21 minutes and 26 seconds overall).
+88.9892%
+84.4444%
+83.7079%
+Done with Epoch # 97.  Took 14 seconds (21 minutes and 39 seconds overall).
+91.5162%
+84.4444%
+82.5843%
+Done with Epoch # 98.  Took 13 seconds (21 minutes and 53 seconds overall).
+88.9892%
+83.3333%
+83.7079%
+Done with Epoch # 99.  Took 14 seconds (22 minutes and 7 seconds overall).
+90.2527%
+82.7778%
+82.0225%
+Done with Epoch # 100.  Took 14 seconds (22 minutes and 20 seconds overall).
+88.8087%
+82.2222%
+82.5843%
+Done with Epoch # 101.  Took 14 seconds (22 minutes and 34 seconds overall).
+88.8087%
+83.8889%
+82.0225%
+Done with Epoch # 102.  Took 13 seconds (22 minutes and 47 seconds overall).
+90.4332%
+83.3333%
+82.5843%
+Done with Epoch # 103.  Took 14 seconds (23 minutes and 628 milliseconds overall).
+90.6137%
+82.7778%
+82.0225%
+Done with Epoch # 104.  Took 14 seconds (23 minutes and 14 seconds overall).
+89.8917%
+82.7778%
+83.7079%
+Done with Epoch # 105.  Took 13 seconds (23 minutes and 28 seconds overall).
+88.6282%
+82.2222%
+81.4607%
+Done with Epoch # 106.  Took 13 seconds (23 minutes and 41 seconds overall).
+91.1552%
+83.3333%
+82.5843%
+Done with Epoch # 107.  Took 13 seconds (23 minutes and 54 seconds overall).
+90.2527%
+84.4444%
+82.0225%
+Done with Epoch # 108.  Took 13 seconds (24 minutes and 7 seconds overall).
+91.3357%
+82.2222%
+82.0225%
+Done with Epoch # 109.  Took 13 seconds (24 minutes and 20 seconds overall).
+90.4332%
+83.8889%
+82.5843%
+Done with Epoch # 110.  Took 13 seconds (24 minutes and 34 seconds overall).
+90.6137%
+83.8889%
+83.1461%
+Done with Epoch # 111.  Took 14 seconds (24 minutes and 47 seconds overall).
+91.1552%
+83.3333%
+83.7079%
+Done with Epoch # 112.  Took 14 seconds (25 minutes and 734 milliseconds overall).
+91.5162%
+83.3333%
+84.2697%
+Done with Epoch # 113.  Took 14 seconds (25 minutes and 14 seconds overall).
+92.2383%
+83.3333%
+82.5843%
+Done with Epoch # 114.  Took 13 seconds (25 minutes and 28 seconds overall).
+90.7942%
+83.8889%
+84.8315%
+Done with Epoch # 115.  Took 13 seconds (25 minutes and 41 seconds overall).
+91.1552%
+82.2222%
+82.0225%
+Done with Epoch # 116.  Took 14 seconds (25 minutes and 55 seconds overall).
+89.8917%
+82.7778%
+79.7753%
+Done with Epoch # 117.  Took 13 seconds (26 minutes and 8 seconds overall).
+91.8773%
+83.8889%
+84.8315%
+Done with Epoch # 118.  Took 13 seconds (26 minutes and 21 seconds overall).
+91.3357%
+83.8889%
+83.1461%
+Done with Epoch # 119.  Took 13 seconds (26 minutes and 35 seconds overall).
+91.6968%
+83.8889%
+82.0225%
+Done with Epoch # 120.  Took 13 seconds (26 minutes and 48 seconds overall).
+91.1552%
+82.7778%
+82.5843%
+Done with Epoch # 121.  Took 13 seconds (27 minutes and 578 milliseconds overall).
+92.7798%
+84.4444%
+83.7079%
+Done with Epoch # 122.  Took 13 seconds (27 minutes and 14 seconds overall).
+92.7798%
+82.7778%
+81.4607%
+Done with Epoch # 123.  Took 13 seconds (27 minutes and 27 seconds overall).
+91.8773%
+81.6667%
+82.5843%
+Done with Epoch # 124.  Took 14 seconds (27 minutes and 41 seconds overall).
+90.9747%
+83.3333%
+83.7079%
+Done with Epoch # 125.  Took 14 seconds (27 minutes and 54 seconds overall).
+92.2383%
+83.8889%
+84.2697%
+Done with Epoch # 126.  Took 14 seconds (28 minutes and 8 seconds overall).
+
+Best Tuning Set Accuracy: 85.0000% at Epoch: 76
+**************** FINAL RESULTS ****************
+Test Set result for convolutional neural network:
+---------------- Confusion Matrix ----------------
+------------------------------------
+|  41 |   2 |   0 |   0 |   0 |   0 |
+------------------------------------
+|   0 |   5 |   1 |   0 |   2 |   0 |
+------------------------------------
+|   0 |   4 |  35 |   0 |   4 |   3 |
+------------------------------------
+|   0 |   1 |   1 |  18 |   0 |   0 |
+------------------------------------
+|   0 |   3 |   0 |   0 |   6 |   1 |
+------------------------------------
+|   0 |   3 |   0 |   1 |   5 |  42 |
+------------------------------------
+Accuracy: 82.5843%
+Mean Squared Error: 9.5607%
+
+Took 28 minutes and 9 seconds to train.

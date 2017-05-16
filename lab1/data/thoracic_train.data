@@ -1,0 +1,611 @@
+// The structure of this dataset is described below.
+// (we're using a very restricted design for simplicity).
+// The structure of this dataset is described below.
+// (we're using a very restricted design for simplicity).
+
+// You can visit
+//    http://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data
+// to see more about this dataset.
+
+// NOTE: Your code should handle both Windows-formatted and Linux-formatted files
+// (which, unfortunately, differ in how the end of line is represented).
+
+// Your code should HANDLE ANY AMOUNT OF 'white space,' including blank lines, BETWEEN TOKENS.
+
+// Note that you only need to handle '//' comments (ie, there will be no "/* */" comments.
+// It is easy in Java to the contents of a string BEFORE any '//' (might get the empty string,
+// which should also be ignored).
+
+// The number of features:
+31
+
+// Next are the feature names followed by a dash and then the legal values of this feature
+// In the CS 540 programming HWs related to decision trees, we will assume that all features have
+// two possible values, though they might have names other than the T and F used here (eg,
+// might have: "size - small big" in some other testbed used during grading).
+
+// Converted DGN from ONE feature with SEVEN legal values to SEVEN Boolean-valued features.
+diagnosisIsDGN3 - T F
+diagnosisIsDGN2 - T F
+diagnosisIsDGN4 - T F
+diagnosisIsDGN6 - T F
+diagnosisIsDGN5 - T F
+diagnosisIsDGN7 - T F
+diagnosisIsDGN1 - T F
+
+// Converted PREV4 by looking at plus/minus one std deviation from the mean.
+lowFVC    - T F
+mediumFVC - T F
+highFVC   - T F
+
+// Converted PREV5  by looking at plus/minus one std deviation from the mean.
+// HOWEVER used 2.0 as the lower threshold since mean - stdDev was less than the minimum value.
+lowVolume    - T F
+mediumVolume - T F
+highVolume   - T F
+
+// Converted PRE6 (see https://en.wikipedia.org/wiki/Performance_status#ECOG.2FWHO.2FZubrod_score)
+// to a 'thermometer scale' (explained in class)/  Ie, PRZ2 = T T, PRZ1 = T F, and PRZ0 = F F (not sure why Wikepedia lists FIVE, though 'death' would be give away).
+ZubrodaAtLeast1 - T F
+ZubrodaAtLeast2 - T F
+
+//PRE7, PRE8, PRE9, PRE10, and PRE11 renamed but otherwise unchanged since already Boolean valued.
+painBeforeSurgery        - T F
+haemoptysisBeforeSurgery - T F 
+dyspnoeaBeforeSurgery    - T F
+coughBeforeSurgery       - T F
+weaknessBeforeSurgery    - T F
+
+// Converted PRe14 converted to a thermometer rep.  OC11 taken to be 'verySmall' and OC13 taken to be 'large.'
+tumorAtLeastSmall  - T F
+tumorAtLeastMedium - T F
+tumorAtLeastLarge  - T F
+
+// PRE17, PRE19, PRE25, and PRE30 renamed but otherwise unchanged since already Boolean valued.
+diabetesMellitus           - T F
+recentMyocardialInfarction - T F 
+peripheralArterialDiseases - T F
+smoker                     - T F
+asthmatic                  - T F
+
+// Converted AGE by looking at plus/minus one std deviation from the mean.
+// Note: 'young' is 'young' with respect to (wrt) this dataset, not wrt the general population.
+young     - T F
+middleAge - T F
+old       - T F
+
+// The class labels (unless stated otherwise, we assume for cs540 HWs, for simplicity, that only TWO values are possible):
+lived
+died
+
+// The original fields, copied verbatim from http://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data
+//  1. DGN: Diagnosis - specific combination of ICD-10 codes for primary and secondary as well multiple tumours if any (DGN3,DGN2,DGN4,DGN6,DGN5,DGN8,DGN1)
+//  2. PRE4: Forced vital capacity - FVC (numeric)
+//  3. PRE5: Volume that has been exhaled at the end of the first second of forced expiration - FEV1 (numeric)
+//  4. PRE6: Performance status - Zubrod scale (PRZ2,PRZ1,PRZ0)
+//  5. PRE7: Pain before surgery (T,F)
+//  6. PRE8: Haemoptysis before surgery (T,F)
+//  7. PRE9: Dyspnoea before surgery (T,F)
+//  8. PRE10: Cough before surgery (T,F)
+//  9. PRE11: Weakness before surgery (T,F)
+// 10. PRE14: T in clinical TNM - size of the original tumour, from OC11 (smallest) to OC14 (largest) (OC11,OC14,OC12,OC13)
+// 11. PRE17: Type 2 DM - diabetes mellitus (T,F)
+// 12. PRE19: MI up to 6 months (T,F)
+// 13. PRE25: PAD - peripheral arterial diseases (T,F)
+// 14. PRE30: Smoking (T,F)
+// 15. PRE32: Asthma (T,F)
+// 16. AGE: Age at surgery (numeric)
+// 17. Risk1Y: 1 year survival period - (T)rue value if died (T,F) 
+
+
+/////////////////////////////
+
+// The number of examples (will read this many in; ok to have more in the file)
+90
+
+// The examples (as mentioned above, we assume, for simplicity, that all features are BOOLEAN-VALUED, 
+// *though the names of the two values might differ across datasets*)
+
+//   First is the example's name, then its category, finally followed
+//   by the values of all of its features (listed in the order of the
+//   feature names above, will be separated by "whitespace"). 
+//   The (boring) names are simply used to concisely identify the examples.
+//   Your decision-tree learner should NOT use these names as a feature (what would happen if you did?).
+
+negTuneEx1     died   F T F F F F F F T F F T F T F F F F T T T F F F F F T F F T F
+posTuneEx1     lived  T F F F F F F F T F T F F T T F T F T T F F F F F F T F F F T
+negTuneEx2     died   T F F F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+negTuneEx3     died   F F T F F F F F T F F T F F F F F F F F T T F F F F T F F F T
+posTuneEx2     lived  F F F F F T F F F T F T F F F F F F F F F F F F F F F F F T F
+posTuneEx3     lived  F F F F T F F F T F F T F T F F F F T F F F F F F F T F F T F
+negTuneEx4     died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx5     died   T F F F F F F F T F T F F T F F F F T F T T F F F F F F F F T
+negTuneEx6     died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTuneEx7     died   T F F F F F F F T F F T F F F F F F F F F F F T F F F F F T F
+negTuneEx8     died   T F F F F F F F T F T F F T F F T F T F T T F F F F T F F F T
+negTuneEx9     died   T F F F F F F F T F F T F T F F F F T F T T F T F F T F F F T
+negTuneEx10    died   F F T F F F F F F T F T F F F F F F F F F F F F F F F F F T F
+negTuneEx11    died   T F F F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+negTuneEx12    died   T F F F F F F F F T F T F T F F F F T F F F F F F F T F F T F
+posTuneEx4     lived  F F T F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+posTuneEx5     lived  T F F F F F F F F T F T F T F F T T T F T T F F F F T F F T F
+negTuneEx13    died   T F F F F F F F F T F T F F F F F F T F T T F F F F T F F T F
+negTuneEx14    died   T F F F F F F F T F T F F T F F F F T T T T F F F F T F F F T
+negTuneEx15    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx16    died   F T F F F F F F F T F T F T F F F F T F F F F F F F T F F T F
+negTuneEx17    died   T F F F F F F F T F F T F T F F T F F F T T F F F F F F F T F
+negTuneEx18    died   F T F F F F F T F F T F F T F F F F T F F F F F F F T F F F T
+negTuneEx19    died   T F F F F F F F T F F T F T F F T F T F T T F F F F T F F F T
+negTuneEx20    died   F T F F F F F F T F F T F T T F F F T T F F F F F F T F F F T
+negTuneEx21    died   T F F F F F F F T F F T F T F F F F T F F F F F F F F F F F T
+negTuneEx22    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTuneEx23    died   T F F F F F F F T F T F F F F F F F F F T T F F F F F F F F T
+negTuneEx24    died   T F F F F F F F T F T F F T F F F F T T F F F F F F T F F F T
+negTuneEx25    died   T F F F F F F T F F T F F T F F F F T T F F F F F F T F F F T
+negTuneEx26    died   T F F F F F F F T F F T F F F F F F F F F F F F F F F F F T F
+posTuneEx6     lived  F F F F T F F F T F F T F F F F F T F F T T F F F F F F F F T
+negTuneEx27    died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTuneEx28    died   T F F F F F F T F F T F F T F F F F T F F F F F F F T F F F T
+negTuneEx29    died   F F T F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+posTuneEx7     lived  T F F F F F F F T F F T F T F T T F F F T T F F F F T F F F T
+negTuneEx30    died   T F F F F F F T F F F T F T F F F F T F T T F F F F T F F T F
+negTuneEx31    died   F T F F F F F F T F F T F F F F F F F F T T F F F F T F F T F
+negTuneEx32    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTuneEx33    died   T F F F F F F F T F F T F T F T T T F F F F F F F F T F F T F
+negTuneEx34    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTuneEx35    died   F F T F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+negTuneEx36    died   T F F F F F F F F T F T F T F F F T T F T T F F F F T F F T F
+negTuneEx37    died   T F F F F F F F T F F T F F F F F F F F F F F F F T T F F F T
+negTuneEx38    died   T F F F F F F F T F T F F F F F F F F F F F F F F F F F F F T
+negTuneEx39    died   T F F F F F F F F T F T F T F F F T T F F F F F F F T F F T F
+negTuneEx40    died   T F F F F F F F T F T F F T F F F F T T T T F F F F T F F F T
+negTuneEx41    died   F F T F F F F F F T F T F F F F F F F F T T F F F F T F F F T
+negTuneEx42    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx43    died   T F F F F F F F T F F T F T F T F F F F F F F F F F T F F F T
+negTuneEx44    died   T F F F F F F F T F F F T F F T F F T F T T F F F F T F F T F
+negTuneEx45    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTuneEx46    died   T F F F F F F F T F F T F T F F T F T F F F F F F F T F F T F
+negTuneEx47    died   F F T F F F F F T F F T F F F F F F F F F F F F F F F F F F T
+negTuneEx48    died   T F F F F F F F T F F T F T T F F F T T T T T F F F T F F F T
+negTuneEx49    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx50    died   F F T F F F F F F T F T F T F F F F T F T T F F F F T F F T F
+negTuneEx51    died   T F F F F F F F T F F T F T F F F F T T T T F F F F T F F F T
+negTuneEx52    died   T F F F F F F F T F F T F T F F T F T F T T F F F F T F F F T
+negTuneEx53    died   T F F F F F F F T F T F F F F F F F F F T T F F F F F F F T F
+negTuneEx54    died   T F F F F F F F T F F T F T F F T F T T T T F F F F T F F F T
+negTuneEx55    died   T F F F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+posTuneEx8     lived  T F F F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+posTuneEx9     lived  T F F F F F F F T F F T F T F T F F T F T T F F F F T F F T F
+posTuneEx10    lived  T F F F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+negTuneEx56    died   F T F F F F F F T F F F T T F F T T T F T T F F F F F F F T F
+negTuneEx57    died   T F F F F F F F T F T F F F F F F F F F F F F F F F T F F T F
+negTuneEx58    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx59    died   T F F F F F F F T F F T F T F F F T T F T T F F F F T F F T F
+negTuneEx60    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTuneEx61    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTuneEx62    died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+posTuneEx11    lived  T F F F F F F F T F T F F T F F F F T T T T F T F F T F F T F
+negTuneEx63    died   T F F F F F F T F F T F F T F F T F T F T T F F F F T F F T F
+negTuneEx64    died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F T F
+negTuneEx65    died   T F F F F F F T F F T F F F F F F F F F T T F F F F F F F T F
+negTuneEx66    died   F F T F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+posTuneEx12    lived  T F F F F F F F F T F T F T F F F T T T F F F F F F T F F T F
+negTuneEx67    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTuneEx68    died   T F F F F F F F T F T F F F F F F F F F F F F F F F F F F T F
+negTuneEx69    died   T F F F F F F F F T F T F T F T F F T F T T T F F F T F F T F
+posTuneEx13    lived  F F T F F F F F T F F T F T T F F F T T T T F F F F T F F F T
+negTuneEx70    died   F F T F F F F F T F F T F T F T F F F F T T F F F F T F F T F
+negTuneEx71    died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F F T
+negTuneEx72    died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+negTuneEx73    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F T F F
+negTuneEx74    died   T F F F F F F T F F T F F T F F F F T T F F F F F T T F F T F
+negTuneEx75    died   F F T F F F F F F T F T F T F F F F T F T T F F F F F F F T F
+negTuneEx76    died   T F F F F F F F T F F T F T F F F F T F T T T F F F F F F T F
+negTuneEx77    died   T F F F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+
+
+// You can visit
+//    http://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data
+// to see more about this dataset.
+
+// NOTE: Your code should handle both Windows-formatted and Linux-formatted files
+// (which, unfortunately, differ in how the end of line is represented).
+
+// Your code should HANDLE ANY AMOUNT OF 'white space,' including blank lines, BETWEEN TOKENS.
+
+// Note that you only need to handle '//' comments (ie, there will be no "/* */" comments.
+// It is easy in Java to the contents of a string BEFORE any '//' (might get the empty string,
+// which should also be ignored).
+
+// The number of features:
+31
+
+// Next are the feature names followed by a dash and then the legal values of this feature
+// In the CS 540 programming HWs related to decision trees, we will assume that all features have
+// two possible values, though they might have names other than the T and F used here (eg,
+// might have: "size - small big" in some other testbed used during grading).
+
+// Converted DGN from ONE feature with SEVEN legal values to SEVEN Boolean-valued features.
+diagnosisIsDGN3 - T F
+diagnosisIsDGN2 - T F
+diagnosisIsDGN4 - T F
+diagnosisIsDGN6 - T F
+diagnosisIsDGN5 - T F
+diagnosisIsDGN7 - T F
+diagnosisIsDGN1 - T F
+
+// Converted PREV4 by looking at plus/minus one std deviation from the mean.
+lowFVC    - T F
+mediumFVC - T F
+highFVC   - T F
+
+// Converted PREV5  by looking at plus/minus one std deviation from the mean.
+// HOWEVER used 2.0 as the lower threshold since mean - stdDev was less than the minimum value.
+lowVolume    - T F
+mediumVolume - T F
+highVolume   - T F
+
+// Converted PRE6 (see https://en.wikipedia.org/wiki/Performance_status#ECOG.2FWHO.2FZubrod_score)
+// to a 'thermometer scale' (explained in class)/  Ie, PRZ2 = T T, PRZ1 = T F, and PRZ0 = F F (not sure why Wikepedia lists FIVE, though 'death' would be give away).
+ZubrodaAtLeast1 - T F
+ZubrodaAtLeast2 - T F
+
+//PRE7, PRE8, PRE9, PRE10, and PRE11 renamed but otherwise unchanged since already Boolean valued.
+painBeforeSurgery        - T F
+haemoptysisBeforeSurgery - T F 
+dyspnoeaBeforeSurgery    - T F
+coughBeforeSurgery       - T F
+weaknessBeforeSurgery    - T F
+
+// Converted PRe14 converted to a thermometer rep.  OC11 taken to be 'verySmall' and OC13 taken to be 'large.'
+tumorAtLeastSmall  - T F
+tumorAtLeastMedium - T F
+tumorAtLeastLarge  - T F
+
+// PRE17, PRE19, PRE25, and PRE30 renamed but otherwise unchanged since already Boolean valued.
+diabetesMellitus           - T F
+recentMyocardialInfarction - T F 
+peripheralArterialDiseases - T F
+smoker                     - T F
+asthmatic                  - T F
+
+// Converted AGE by looking at plus/minus one std deviation from the mean.
+// Note: 'young' is 'young' with respect to (wrt) this dataset, not wrt the general population.
+young     - T F
+middleAge - T F
+old       - T F
+
+// The class labels (unless stated otherwise, we assume for cs540 HWs, for simplicity, that only TWO values are possible):
+lived
+died
+
+// The original fields, copied verbatim from http://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data
+//  1. DGN: Diagnosis - specific combination of ICD-10 codes for primary and secondary as well multiple tumours if any (DGN3,DGN2,DGN4,DGN6,DGN5,DGN8,DGN1)
+//  2. PRE4: Forced vital capacity - FVC (numeric)
+//  3. PRE5: Volume that has been exhaled at the end of the first second of forced expiration - FEV1 (numeric)
+//  4. PRE6: Performance status - Zubrod scale (PRZ2,PRZ1,PRZ0)
+//  5. PRE7: Pain before surgery (T,F)
+//  6. PRE8: Haemoptysis before surgery (T,F)
+//  7. PRE9: Dyspnoea before surgery (T,F)
+//  8. PRE10: Cough before surgery (T,F)
+//  9. PRE11: Weakness before surgery (T,F)
+// 10. PRE14: T in clinical TNM - size of the original tumour, from OC11 (smallest) to OC14 (largest) (OC11,OC14,OC12,OC13)
+// 11. PRE17: Type 2 DM - diabetes mellitus (T,F)
+// 12. PRE19: MI up to 6 months (T,F)
+// 13. PRE25: PAD - peripheral arterial diseases (T,F)
+// 14. PRE30: Smoking (T,F)
+// 15. PRE32: Asthma (T,F)
+// 16. AGE: Age at surgery (numeric)
+// 17. Risk1Y: 1 year survival period - (T)rue value if died (T,F) 
+
+
+/////////////////////////////
+
+// The number of examples (will read this many in; ok to have more in the file)
+295
+
+// The examples (as mentioned above, we assume, for simplicity, that all features are BOOLEAN-VALUED, 
+// *though the names of the two values might differ across datasets*)
+
+//   First is the example's name, then its category, finally followed
+//   by the values of all of its features (listed in the order of the
+//   feature names above, will be separated by "whitespace"). 
+//   The (boring) names are simply used to concisely identify the examples.
+//   Your decision-tree learner should NOT use these names as a feature (what would happen if you did?).
+
+negTrainEx1    died   T F F F F F F F T F T F F F F F F F F F T T F F F F T F F T F
+negTrainEx2    died   T F F F F F F F T F F T F T F F  F F T F F F F F F F T F F T F
+negTrainEx3    died   T F F F F F F F T F T F F T F F F F T F F F F F F F F F F T F
+posTrainEx1    lived  T F F F F F F F F T F T F T F F F F T F  T T F T F F T F F T F
+posTrainEx2    lived  F T F F F F F F T F F T F T F F F F T F F F F F F T T F F F T
+negTrainEx4    died   T F F F F F F F  T F F T F T T F F F T T F F F F F F T F F F T
+negTrainEx5    died   T F F F F F F T F F 		F T F T F F F F T F F F F F F F T F F T F
+negTrainEx6    died   T F F F F F F F T F F T F F F F T F T F T T F F F F F F F T F
+negTrainEx7    died   T F F F F F F F F T F T F T F F F F F F T T F F F F T F F T F
+negTrainEx8    died   T F F F F F F F T F F T F T F F F F T T F F F F F F T F F F T
+posTrainEx3    lived  F T F F F F F F T F F T F T T F F F T T T F F F F F T F F F T
+negTrainEx9    died   F T F F F F F T F F T F F F F F T F F F T T F F F F T F F T F
+negTrainEx10   died   F T F F F F F F T F T F F F F F F F F F T T F F F F T F F T F
+negTrainEx11   died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTrainEx12   died   T F F F F F F T F F T F F F F F F F F F T T F F F F T F F F T
+negTrainEx13   died   T F F F F F F F    T F F T F F F F F F F F F F F F F F T F F F T
+negTrainEx14   died   F F F F T F F F F T F F T F F T T F T F T T F F F F T F F T F
+negTrainEx15   died   T F F F F 		F F F T F F T F T F F F F T F F F F F F F T F F T F
+posTrainEx4    lived  T F F F F F F F T F F T F T F F F F T T F F F F F F T F F F T
+negTrainEx16   died   T F F F F F F F T F F T F T F F F F T T F F F F F F T F F T F
+negTrainEx17   died   F F F T F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTrainEx18   died   T F F F F F F F F T F T F T F F F F T F T T F F F F F F F T F
+negTrainEx19   died   F F F F T F F F T F T F F T F T F F F F T T F T F   F F F F F T
+negTrainEx20   died   T F F F F F F T F F T F F T F F F F T F T T F T F F F F F F T
+negTrainEx21   died   F T F F F F F F T F F T F T F F F F T F F F F F F F F F F F T
+negTrainEx22   died   T F F F F F F T F F T F F F F F F F F F F F F F F F T F F T F
+negTrainEx23   died   T F F F F F F T F F T F F T F F F F T F T T F F F F T F F F T
+negTrainEx24   died   T F F F F F F F T F F T F T F F T T F F T T F T F F F F F T F
+negTrainEx25   died   T F F F F F F F T F F T F F F   F F F F F F F F F F F T F F T F
+posTrainEx5    lived  F T F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+posTrainEx6    lived  F F F F T F F F T F F T F F F F F F T F T T F F F F T F F T F
+negTrainEx26   died   T F F F F F F F T F F T F T F T F F T F T T F F F F T F F T F
+negTrainEx27   died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTrainEx28   died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+posTrainEx7    lived  T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx29   died   T F F F F F F F F T F T F T T F F F T T T T F F F F T F F T F
+negTrainEx30   died   F F T F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx31   died   F F T F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+posTrainEx8    lived  T F F F F F F F T F F T F T F T F F T T F F F T F F T F F F T
+negTrainEx32   died   F F T F F F F F F T F T F F F F F F F F T T F F F F T F F F T
+negTrainEx33   died   T F F F F F F F T F F T F F F F F F F F T T   F F F F T F F T F
+posTrainEx9    lived  T F F F F F F F T F F T F F F F F F F F T T T F F F T F F T F
+negTrainEx34   died   T F F F F F F F T F F T F T T F F F T T T T F F F F T F F F T
+negTrainEx35   died   T F F F F F F F F T F T F F F F F F F F F F F F F F T F F T F
+negTrainEx36   died   T F F F F F F F T F F T F T F F F F T F T T F F F F F F F T F
+negTrainEx37   died   T F F F F F F T F F F T F F F F F F F F F F F F F F F F T F F
+posTrainEx10   lived  F F T F F F F T F F T F F T F F T F T T F F F F F F T F F F T
+negTrainEx38   died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx39   died   T F F F F F F F T F F T F T F F T F F F F F F F F F F F F T F
+negTrainEx40   died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTrainEx41   died   T F F F F F F F F T F T F T F F F F T F F F F F F F T F F T F
+posTrainEx11   lived  T F F F F F F F T F F T F T F F F F T F T F F F F F T F T F F
+negTrainEx42   died   T F F F F F F T F F T F F T F F F F T T F F F F F F T F F F T
+posTrainEx12   lived  T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx43   died   T F F F F F F T F F T F   F T F F F F T F T T F F F F T F F T F
+negTrainEx44   died   T F F F F F F F T F F T F T F F F F T F T T F F F F F F F F T
+negTrainEx45   died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx46   died   T F F F F F F T F F T F F T F F F F T F T F F F F F T F F T F
+negTrainEx47   died   T F F F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+negTrainEx48   died   T F F F F F F F T F F T F T F F F F T F F F F T F F F F F F T
+negTrainEx49   died   T F F F F F F T F F F T F T F F F T F F T T F F F T T F F F T
+negTrainEx50   died   F F F F T F F F T F T F F T T F T F T T F F F F F F T F F F T
+negTrainEx51   died   F F T F F F F F T F F T F T F F T F T F T T F F F F T F F F T
+negTrainEx52   died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTrainEx53   died   T F F F F F F T F F T F F T T F F F T T T T F F    F F T F F F T
+negTrainEx54   died   T F F F F F F F T F F F T T F F F T T F F F F F F F T F F T F
+negTrainEx55   died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTrainEx56   died   T F F F F F F T F F T F F T F F F F T T T T F T F F T F F F T
+negTrainEx57   died   F F T F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+negTrainEx58   died   T F F F F F F T F F T F F T		 F F F F T F F F F F F F F T F T F
+negTrainEx59   died   F F F F T F F F F T F T F T F F F F F T F F F F F F F F F T F
+negTrainEx60   died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx61   died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx62   died   T F F F F F F F T F F T F T F F F T T F T T F F F F T F F F T
+negTrainEx63   died   F T F F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+negTrainEx64   died   T F F F F F F F T F F T F T F F F F T F T T F T F F T F F T F
+negTrainEx65   died   T F F F F F F F T F F F T F F F F F F F T T F F F F T F F T F
+negTrainEx66   died   T F F F F F F F F T F T F F F F F    F F F F F F F F F T F F T F
+posTrainEx13   lived  F F T F F F F F T F T F F T F F T F T F F F F T F F T F F T F
+negTrainEx67   died   T F F F F F F F T F F T F T F F F F T F T T F T F F T F F T F
+negTrainEx68   died   F F T F F F F F T F F T F T F F F F F F F F F F F F T F F T F
+negTrainEx69   died   F T F F F F F F T F F T F T F F F F T F F F F F F F F F F T F
+negTrainEx70   died   F T F F F F F F T F F T F T F F F T T F T T T F F F T F F F T
+negTrainEx71   died   F F T F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTrainEx72   died   T F F F F F F F T F F T F T F F F F T T T T F F F F T F F F T
+negTrainEx73   died   T F F F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+negTrainEx74   died   T F F F F F F F F T F T F T F F F F T F F F F F F F T F F F T
+posTrainEx14   lived  F F T F F F F F T F F T F T T F F T T F T T F F F F T F F F T
+negTrainEx75   died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTrainEx76   died   F T F F F F F T F F T F F T F F F F F F T T F F F F T F F F T
+posTrainEx15   lived  F T F F F F F F T F F F T F F F F T F F T T T F F F T F F F T
+negTrainEx77   died   T F F F F F F T F F T F F F F F F F F F F F F F F F T F F F T
+negTrainEx78   died   T F F F F F F F F T F T F T F F F F T F T T F F F F T F F T F
+negTrainEx79   died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+posTrainEx16   lived  T F F F F F F T F F T F F T F F F F T F T F F F F F T F F T F
+negTrainEx80   died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+posTrainEx17   lived  F F T F F F F T F F T F F F F F F F F F T T F F F F T F F F T
+negTrainEx81   died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx82   died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx83   died   T F F F F F F F T F F T F F F F F F F F T T F F F F F F F T F
+posTrainEx18   lived  T F F F F F F F T F F T F T F F T F T F F F F F F F T F F F T
+posTrainEx19   lived  T F F F F F F F T F F T F T F T F F F F T T F F F F F F F F T
+negTrainEx84   died   T F F F F F F F T F F T F T F F F F T T T T F F F F T F F F T
+negTrainEx85   died   T F F F F F F F T F F T F T F F F F F T T T F T F F F F F F T
+negTrainEx86   died   T F F F F F F F T F F T F T F F F T T F T T T F F F T F F F T
+negTrainEx87   died   T F F F F F F F T F T F F T F F F F T T T T F F T F T F F T F
+negTrainEx88   died   T F F F F F F F T F F T F T F F T F T T T T F F F T T F F T F
+negTrainEx89   died   T F F F F F F T F F T F F T F F F F T F F F F F F F T F F T F
+negTrainEx90   died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTrainEx91   died   T F F F F F F F T F F T F T F T T F T F T T F F F F T F F F T
+negTrainEx92   died   F T F F F F F F T F T F F T F F F F T F T T F F F F F F F F T
+negTrainEx93   died   T F F F F F F F T F F T F T F F T T T F T T F F F F T F F T F
+negTrainEx94   died   F T F F F F F F T F F T F T F F F F T T F F F F F F T F F F T
+negTrainEx95   died   T F F F F F F T F F F T F F F F F F F F F F F T F F T F F T F
+posTrainEx20   lived  T F F F F F F F T F T F F T F F T T T F T T T F F F F F F T F
+negTrainEx96   died   T F F F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+negTrainEx97   died   F T F F F F F F T F F T F T F F T T T F T T F F F T T F F F T
+posTrainEx21   lived  T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+posTrainEx22   lived  T F F F F F F F T F F T F F F F F T T F T T F F F F T F F F T
+negTrainEx98   died   T F F F F F F F T F F T F T T F F F T F T F F F F F T F F T F
+negTrainEx99   died   T F F F F F F F T F F T F T T F F F T T T T F F F F T F F T F
+negTrainEx100  died   T F F F F F F F T F F T F T F F F F T T T T F F F F T F F T F
+negTrainEx101  died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTrainEx102  died   F F T F F F F F T F T F F T F F F F T F F F F F F F T F F F T
+posTrainEx23   lived  T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTrainEx103  died   F T F F F F F F T F F T F T F F F F T F F F F F F F F F F T F
+negTrainEx104  died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F T F
+negTrainEx105  died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTrainEx106  died   T F F F F F F F T F F T F T F F F F T F T T F F F F F F F T F
+negTrainEx107  died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTrainEx108  died   F T F F F F F F T F F T F T F T T F F F T T T F F F T F F T F
+negTrainEx109  died   T F F F F F F T F F T F F F F F F F F F T T F F F F T F F F T
+negTrainEx110  died   T F F F F F F F T F T F F T F F F F T F F F F F F F T F F F T
+negTrainEx111  died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F F T
+negTrainEx112  died   T F F F F F F F F T F T F F F F F F F F F F F F F F T F F T F
+posTrainEx24   lived  T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+posTrainEx25   lived  T F F F F F F T F F T F F F F F F F F F T T F T F F T F F F T
+negTrainEx113  died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTrainEx114  died   F T F F F F F F T F F T F T F F T F T F T T F F F F T F F T F
+negTrainEx115  died   F T F F F F F F T F T F F T F F F F T F T T F F F F T F F T F
+negTrainEx116  died   T F F F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+negTrainEx117  died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+posTrainEx26   lived  F F F F T F F F T F F T F T F F F F T F T T T F F F T F F T F
+negTrainEx118  died   T F F F F F F F F T F T F T F F F F T F T T F F F F T F F T F
+negTrainEx119  died   F F T F F F F F T F F T F T F T F F F F T T F T F F T F F F T
+negTrainEx120  died   T F F F F F F F T F F T F T F F F F T T T T F F F F T F F F T
+posTrainEx27   lived  T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+posTrainEx28   lived  T F F F F F F F T F F T F T F F F F T F T T F T F F T F F F T
+negTrainEx121  died   F F F F T F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx122  died   T F F F F F F T F F T F F T F F F F T F F F F F F F T F F F T
+negTrainEx123  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx124  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx125  died   T F F F F F F F T F F T F F F F F F T F F F F F F F T F F F T
+posTrainEx29   lived  F F F F T F F F T F F T F T F F F F F T F F F F F F T F F T F
+posTrainEx30   lived  T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx126  died   T F F F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+posTrainEx31   lived  F T F F F F F F F T F T F F F F T F T F T F F F F F T F F F T
+negTrainEx127  died   T F F F F F F F F T F T F T F F F F F F F F F F F F T F F T F
+negTrainEx128  died   T F F F F F F F T F F T F T F F F F T F F F F F T F T F F T F
+negTrainEx129  died   T F F F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+posTrainEx32   lived  T F F F F F F F T F F T F T T F F F T T F F F F F F T F F F T
+negTrainEx130  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx131  died   T F F F F F F F T F T F F T F F F F T F F F F F F F T F F T F
+negTrainEx132  died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F T F
+negTrainEx133  died   T F F F F F F T F F T F F T F F F F T F T T F F F F T F F F T
+negTrainEx134  died   T F F F F F F F T F T F F F F F T F T F F F F F F F T F F T F
+negTrainEx135  died   T F F F F F F F T F T F F T F F F F T F F F F F F F T F F F T
+negTrainEx136  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+posTrainEx33   lived  T F F F F F F F T F T F F T T F F T T T T T F F F F T F F F T
+negTrainEx137  died   T F F F F F F F F T F T F T F T F F T F F F F F F F T F F F T
+posTrainEx34   lived  T F F F F F F F T F T F F T F F F F T T T T F F F F T F F F T
+negTrainEx138  died   F F F F T F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTrainEx139  died   T F F F F F F T F F T F F F F F T F F F T T F F F F F F F F T
+negTrainEx140  died   F F T F F F F F T F F T F T T F F F T T F F F T F F T F F F T
+posTrainEx35   lived  F T F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx141  died   T F F F F F F F T F F T F T F F F F T F T T F T F F T F F F T
+negTrainEx142  died   T F F F F F F F F T F T F T F F F F T F F F F F F F F F F T F
+negTrainEx143  died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+negTrainEx144  died   T F F F F F F T F F T F F T F F F F T F F F F F F F T F F F T
+negTrainEx145  died   T F F F F F F F T F F T F F F F F F F F T T F F F F F F F F T
+negTrainEx146  died   T F F F F F F F T F F T F T F T F F T F T T F F F F F F F F T
+negTrainEx147  died   F T F F F F F T F F T F F T F F T F T F T T F F F F T F F F T
+negTrainEx148  died   T F F F F F F T F F T F F F F F F F F F F F F F F F T F F T F
+negTrainEx149  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx150  died   T F F F F F F F T F T F F T F F F F T T T F F F F F T F F T F
+negTrainEx151  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx152  died   T F F F F F F F T F F T F T F F F F T T F F F T F F T F F F T
+negTrainEx153  died   F F F F F F T F T F F T F F F F F F F F T T F F F F T F F F T
+negTrainEx154  died   T F F F F F F F T F F T F T F F F F T F T T F F F T T F F F T
+posTrainEx36   lived  T F F F F F F F T F T F F T F F F F T F T T F F F F T F F T F
+posTrainEx37   lived  T F F F F F F F F T F T F T F T F T T F T T F F F F T F F T F
+negTrainEx155  died   T F F F F F F F T F T F F F F F F F F F T T F F F F T F F T F
+negTrainEx156  died   T F F F F F F F F T F T F T F F T F T T T T F F F F T F F F T
+posTrainEx38   lived  T F F F F F F F F T F T F T T T F F T T T T T F F F F F F F T
+negTrainEx157  died   F F F F T F F F T F F T F T F F F F T T T T F F F F T F F F T
+negTrainEx158  died   T F F F F F F T F F T F F T F F F F F T F F F F F F T F F F T
+negTrainEx159  died   F F T F F F F F T F F T F F F F F F F F F F F F F F F F F F T
+negTrainEx160  died   T F F F F F F F T F T F F T F F T F T T T T F F F F F F F F T
+negTrainEx161  died   T F F F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+negTrainEx162  died   F T F F F F F F T F F T F T F F T F T F T T F F F F T F F T F
+negTrainEx163  died   T F F F F F F T F F F F T F F F F F F F F F F F F F T F F F T
+negTrainEx164  died   T F F F F F F F F T F T F T F F F F T F T F F F F F T F F T F
+negTrainEx165  died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTrainEx166  died   F T F F F F F F T F T F F T T F T F T T T T F F F F T F F F T
+negTrainEx167  died   F F T F F F F F F T F T F T F F F F F F F F F F F F T F F T F
+negTrainEx168  died   T F F F F F F F T F T F F T T F T F T T F F F F F F T F F F T
+negTrainEx169  died   F F T F F F F T F F T F F F F F F F F F T T F F F F F F F F T
+negTrainEx170  died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTrainEx171  died   F F T F F F F T F F T F F F F F F F F F F F F F F F F F F F T
+negTrainEx172  died   T F F F F F F T F F T F F T F F T F T T F F F F F F T F F F T
+negTrainEx173  died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTrainEx174  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+posTrainEx39   lived  T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTrainEx175  died   F F T F F F F F T F T F F T F F T F T F F F F F F F T F F F T
+negTrainEx176  died   T F F F F F F F T F F T F T F F F F T T F F F F F F T F F T F
+negTrainEx177  died   F T F F F F F F T F F T F T F F F F F T F F F F F F T F F T F
+negTrainEx178  died   F F T F F F F T F F F F T F F F F F F F T T F F F F F F F F T
+posTrainEx40   lived  T F F F F F F F T F F T F T F F T F T F T T F F F F T F F F T
+negTrainEx179  died   T F F F F F F F T F T F F T F F F F T F F F F F F F T F F F T
+negTrainEx180  died   T F F F F F F F T F F F T T F F T T F F T T F F F F F F F T F
+negTrainEx181  died   T F F F F F F F T F F F T F F F F F F F T T F T F F T F F T F
+negTrainEx182  died   T F F F F F F F F T F T F T F F F F T F F F F F F F T F F T F
+negTrainEx183  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+posTrainEx41   lived  T F F F F F F T F F T F F F F F F F F F T T F F F F T F F F T
+negTrainEx184  died   F F T F F F F F T F F T F F F F F F F F T T F F F F F F F F T
+negTrainEx185  died   T F F F F F F T F F T F F T T F F F T T F F F F F F T F F T F
+negTrainEx186  died   T F F F F F F T F F T F F F F F F F F F T T F F F F T F F F T
+negTrainEx187  died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+posTrainEx42   lived  F F F F T F F T F F T F F T F F T F T F T T F T F T T F F F T
+negTrainEx188  died   F F F T F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx189  died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F T F
+negTrainEx190  died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+negTrainEx191  died   T F F F F F F T F F T F F F F F T F T F T F F T F F T F F T F
+negTrainEx192  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx193  died   T F F F F F F F F T F T F F F F F F F F T T F F F F T F F F T
+negTrainEx194  died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+negTrainEx195  died   T F F F F F F T F F T F F F F F F F F F T T F F F F T F F F T
+negTrainEx196  died   T F F F F F F F F T F T F T F F F F F T T T F F F F T F F F T
+negTrainEx197  died   T F F F F F F F T F T F F F F F T F F F T T F F F F T F F T F
+negTrainEx198  died   T F F F F F F F F T F T F F F F F F F F F F F F F F T F F T F
+negTrainEx199  died   F F T F F F F F T F F T F T F T T F T F T T F F F F F F F F T
+negTrainEx200  died   T F F F F F F F T F T F F T F F F F T F F F F F F F F F F T F
+negTrainEx201  died   T F F F F F F T F F T F F T F F F F T F T T F F F F F F F T F
+negTrainEx202  died   T F F F F F F F T F T F F T F F F F T F T T F T F F T F F F T
+negTrainEx203  died   F F T F F F F F T F F T F F F F F F F F T T F F F F T F F T F
+negTrainEx204  died   T F F F F F F T F F T F F T F F F F T F T T T F F F T F F F T
+negTrainEx205  died   F T F F F F F F T F F T F T F F F F T F T F F F F F T F F T F
+negTrainEx206  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTrainEx207  died   F T F F F F F T F F T F F T F F T F T F T T F F F F T F F T F
+negTrainEx208  died   F F T F F F F F T F F T F T F F F F T F T T T F F F T F F F T
+negTrainEx209  died   F F T F F F F F T F F T F T F F F F T T F F F F F F T F F T F
+negTrainEx210  died   T F F F F F F F T F F T F F F F F F F F T T F F F F F F T F F
+negTrainEx211  died   T F F F F F F F F T F T F T F F F F T F T T F F F F T F F T F
+negTrainEx212  died   F T F F F F F F T F F T F T F F F F T F F F F F F F T F F F T
+negTrainEx213  died   T F F F F F F F T F T F F T F F F F T F F F F F F F T F F F T
+negTrainEx214  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx215  died   T F F F F F F F T F F T F T F F T F T F T T F F F F T F F T F
+negTrainEx216  died   F F F T F F F F F T F T F T F F F F T F T T F F F F F F F F T
+negTrainEx217  died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+negTrainEx218  died   T F F F F F F F T F F T F T F F F F T F T T F T F F T F F T F
+posTrainEx43   lived  F T F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx219  died   T F F F F F F F T F F T F F F F F F F F F F F F F F F F F T F
+negTrainEx220  died   T F F F F F F T F F T F F T F F T F T F F F F F F F T F F F T
+negTrainEx221  died   T F F F F F F F T F F T F F F F F F F F F F F F F F F F F F T
+negTrainEx222  died   T F F F F F F F T F F T F T F F F F T T F F F T F F T F F F T
+negTrainEx223  died   T F F F F F F F F T F T F T F F F F F F T T F F F F T F F T F
+negTrainEx224  died   F T F F F F F F T F F T F F F T T F F F T T F F F F F F F F T
+negTrainEx225  died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F F T
+negTrainEx226  died   T F F F F F F F F T F T F F F F T F T F T T F F F F F F F T F
+negTrainEx227  died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx228  died   T F F F F F F F T F F T F T F T T F T F F F F F F F F F F F T
+negTrainEx229  died   T F F F F F F F T F F T F T F F F F T T T T F F F F T F F F T
+negTrainEx230  died   T F F F F F F F T F F T F T F F F F T F T F F T F F T F F F T
+negTrainEx231  died   T F F F F F F T F F T F F T F F F F T F F F F F F F T F F T F
+negTrainEx232  died   T F F F F F F F T F F T F T F F F F T F F F F F F F T F F T F
+negTrainEx233  died   T F F F F F F F F T F T F T F F F T T F T T F F F F T F F T F
+negTrainEx234  died   F F F F T F F F T F F F T F F T T F T F T T F F F F F F F T F
+negTrainEx235  died   T F F F F F F F T F F T F T F F F F T T T T F F F F T F F F T
+negTrainEx236  died   F T F F F F F F T F F T F T F F F T T F T T F F F F F F F T F
+negTrainEx237  died   T F F F F F F F T F T F F F F F F F F F F F F F F F T F F F T
+negTrainEx238  died   F F F F F T F F F T F T F F F F F F F F T T F F F F F F F T F
+negTrainEx239  died   F T F F F F F F F T F T F T F F F F T T T T F F F F T F F T F
+negTrainEx240  died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F F T
+posTrainEx44   lived  T F F F F F F F T F T F F T F F F F T F T T F F F F T F F T F
+negTrainEx241  died   T F F F F F F T F F T F F T T F F F T T F F F F F F F F F F T
+negTrainEx242  died   F F T F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTrainEx243  died   T F F F F F F F T F F T F T F F T F T T F F F F F F T F F F T
+negTrainEx244  died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F F T
+negTrainEx245  died   T F F F F F F F F T F T F F F F F F T F F F F F F F T F F T F
+negTrainEx246  died   T F F F F F F F T F F T F T F F F F T F F F F F F F F F F T F
+negTrainEx247  died   T F F F F F F F F T F T F F F F F F T F T T F F F F F F F F T
+negTrainEx248  died   T F F F F F F T F F T F F T T T T F F F F F F F F F T F F F T
+posTrainEx45   lived  F F T F F F F F T F F T F T F F F F T T T T F T F F T F F T F
+negTrainEx249  died   T F F F F F F F T F F T F T F F F F T T T T T F F F T F F F T
+negTrainEx250  died   F T F F F F F F T F F T F T F F F F T F T T T F F F T F F F T
+

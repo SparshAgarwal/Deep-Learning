@@ -1,0 +1,86 @@
+***** Run 1 *****
+Using: ETA = 0.005, numHiddenUnits = 50, patience = 50, epochStep = 1
+
+Best Training Set Accuracy: 96.3899% at Epoch : 97
+Best Tuning Set Accuracy: 72.7778% at Epoch: 47
+
+**************** FINAL RESULTS ****************
+Test Set result for one hidden layer neural network:
+Accuracy: 69.1011%
+Mean Squared Error: 12.3770%
+
+Took 18 minutes and 16 milliseconds to train.
+
+***** Run 2 *****
+Using: ETA = 0.001, numHiddenUnits = 300, patience = 70, epochStep = 5
+
+Best Training Set Accuracy: 98.0144% at Epoch: 85
+Best Tuning Set Accuracy: 73.8889% at Epoch: 33
+
+**************** FINAL RESULTS ****************
+Test Set result for one hidden layer neural network:
+Accuracy: 71.9101%
+Mean Squared Error: 12.8007%
+
+Took 1 hours and 3 minutes and 33 seconds to train.
+
+***** Run 3 *****
+Using: ETA = 0.01, numHiddenUnits = 50, patience = 70, epochStep = 1
+
+Best Tuning Set Accuracy: 74.4444% at Epoch: 50
+
+**************** FINAL RESULTS ****************
+Test Set result for one hidden layer neural network:
+Accuracy: 73.0337%
+Mean Squared Error: 11.6873%
+
+Took 15 minutes and 28 seconds to train.
+
+***** Run 3 *****
+Using: ETA = 0.01, numHiddenUnits = 50, patience = 40, epochStep = 1
+
+Best Tuning Set Accuracy: 70.0000% at Epoch: 24
+
+**************** FINAL RESULTS ****************
+Test Set result for one hidden layer neural network:
+Accuracy: 71.9101%
+Average Error: 12.6511%
+
+Took 8 minutes and 12 seconds to train.
+
+***** Run 4 *****
+Using: ETA = 0.01, numHiddenUnits = 50, patience = 40, epochStep = 1
+
+Best Tuning Set Accuracy: 72.2222% at Epoch: 57
+
+**************** FINAL RESULTS ****************
+Test Set result for one hidden layer neural network:
+Accuracy: 71.3483%
+Mean Squared Error: 11.8385%
+
+Took 12 minutes and 9 seconds to train.
+
+***** Run 5 *****
+
+Best Tuning Set Accuracy: 71.1111% at Epoch: 72
+
+**************** FINAL RESULTS ****************
+Test Set result for one hidden layer neural network:
+---------------- Confusion Matrix ----------------
+------------------------------------
+|  38 |   0 |   0 |   0 |   1 |   2 |
+------------------------------------
+|   2 |   5 |   1 |   1 |   5 |   4 |
+------------------------------------
+|   1 |   1 |  28 |   1 |   3 |   3 |
+------------------------------------
+|   1 |   0 |   4 |  11 |   1 |   2 |
+------------------------------------
+|   0 |   2 |   2 |   1 |   9 |   3 |
+------------------------------------
+|   3 |   3 |   3 |   0 |   0 |  37 |
+------------------------------------
+Accuracy: 71.9101%
+Mean Squared Error: 11.4607%
+
+Took 14 minutes and 3 seconds to train.

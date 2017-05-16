@@ -1,0 +1,198 @@
+// The structure of this dataset is described below.
+// (we're using a very restricted design for simplicity).
+
+// You can visit
+//    http://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data
+// to see more about this dataset.
+
+// NOTE: Your code should handle both Windows-formatted and Linux-formatted files
+// (which, unfortunately, differ in how the end of line is represented).
+
+// Your code should HANDLE ANY AMOUNT OF 'white space,' including blank lines, BETWEEN TOKENS.
+
+// Note that you only need to handle '//' comments (ie, there will be no "/* */" comments.
+// It is easy in Java to the contents of a string BEFORE any '//' (might get the empty string,
+// which should also be ignored).
+
+// The number of features:
+31
+
+// Next are the feature names followed by a dash and then the legal values of this feature
+// In the CS 540 programming HWs related to decision trees, we will assume that all features have
+// two possible values, though they might have names other than the T and F used here (eg,
+// might have: "size - small big" in some other testbed used during grading).
+
+// Converted DGN from ONE feature with SEVEN legal values to SEVEN Boolean-valued features.
+diagnosisIsDGN3 - T F
+diagnosisIsDGN2 - T F
+diagnosisIsDGN4 - T F
+diagnosisIsDGN6 - T F
+diagnosisIsDGN5 - T F
+diagnosisIsDGN7 - T F
+diagnosisIsDGN1 - T F
+
+// Converted PREV4 by looking at plus/minus one std deviation from the mean.
+lowFVC    - T F
+mediumFVC - T F
+highFVC   - T F
+
+// Converted PREV5  by looking at plus/minus one std deviation from the mean.
+// HOWEVER used 2.0 as the lower threshold since mean - stdDev was less than the minimum value.
+lowVolume    - T F
+mediumVolume - T F
+highVolume   - T F
+
+// Converted PRE6 (see https://en.wikipedia.org/wiki/Performance_status#ECOG.2FWHO.2FZubrod_score)
+// to a 'thermometer scale' (explained in class)/  Ie, PRZ2 = T T, PRZ1 = T F, and PRZ0 = F F (not sure why Wikepedia lists FIVE, though 'death' would be give away).
+ZubrodaAtLeast1 - T F
+ZubrodaAtLeast2 - T F
+
+//PRE7, PRE8, PRE9, PRE10, and PRE11 renamed but otherwise unchanged since already Boolean valued.
+painBeforeSurgery        - T F
+haemoptysisBeforeSurgery - T F 
+dyspnoeaBeforeSurgery    - T F
+coughBeforeSurgery       - T F
+weaknessBeforeSurgery    - T F
+
+// Converted PRe14 converted to a thermometer rep.  OC11 taken to be 'verySmall' and OC13 taken to be 'large.'
+tumorAtLeastSmall  - T F
+tumorAtLeastMedium - T F
+tumorAtLeastLarge  - T F
+
+// PRE17, PRE19, PRE25, and PRE30 renamed but otherwise unchanged since already Boolean valued.
+diabetesMellitus           - T F
+recentMyocardialInfarction - T F 
+peripheralArterialDiseases - T F
+smoker                     - T F
+asthmatic                  - T F
+
+// Converted AGE by looking at plus/minus one std deviation from the mean.
+// Note: 'young' is 'young' with respect to (wrt) this dataset, not wrt the general population.
+young     - T F
+middleAge - T F
+old       - T F
+
+// The class labels (unless stated otherwise, we assume for cs540 HWs, for simplicity, that only TWO values are possible):
+lived
+died
+
+// The original fields, copied verbatim from http://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data
+//  1. DGN: Diagnosis - specific combination of ICD-10 codes for primary and secondary as well multiple tumours if any (DGN3,DGN2,DGN4,DGN6,DGN5,DGN8,DGN1)
+//  2. PRE4: Forced vital capacity - FVC (numeric)
+//  3. PRE5: Volume that has been exhaled at the end of the first second of forced expiration - FEV1 (numeric)
+//  4. PRE6: Performance status - Zubrod scale (PRZ2,PRZ1,PRZ0)
+//  5. PRE7: Pain before surgery (T,F)
+//  6. PRE8: Haemoptysis before surgery (T,F)
+//  7. PRE9: Dyspnoea before surgery (T,F)
+//  8. PRE10: Cough before surgery (T,F)
+//  9. PRE11: Weakness before surgery (T,F)
+// 10. PRE14: T in clinical TNM - size of the original tumour, from OC11 (smallest) to OC14 (largest) (OC11,OC14,OC12,OC13)
+// 11. PRE17: Type 2 DM - diabetes mellitus (T,F)
+// 12. PRE19: MI up to 6 months (T,F)
+// 13. PRE25: PAD - peripheral arterial diseases (T,F)
+// 14. PRE30: Smoking (T,F)
+// 15. PRE32: Asthma (T,F)
+// 16. AGE: Age at surgery (numeric)
+// 17. Risk1Y: 1 year survival period - (T)rue value if died (T,F) 
+
+
+/////////////////////////////
+
+// The number of examples (will read this many in; ok to have more in the file)
+85
+
+// The examples (as mentioned above, we assume, for simplicity, that all features are BOOLEAN-VALUED, 
+// *though the names of the two values might differ across datasets*)
+
+//   First is the example's name, then its category, finally followed
+//   by the values of all of its features (listed in the order of the
+//   feature names above, will be separated by "whitespace"). 
+//   The (boring) names are simply used to concisely identify the examples.
+//   Your decision-tree learner should NOT use these names as a feature (what would happen if you did?).
+
+negTestEx1     died   T F F F F F F F T F F T F F F F F F F F F F F F F F F F F T F
+negTestEx2     died   T F F F F F F T F F T F F T F F F F T F F F F F F F T F F F T
+negTestEx3     died   T F F F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+negTestEx4     died   T F F F F F F F F T F T F F F F F F F F T T F F F F T F F T F
+posTestEx1     lived  T F F F F F F F T F F T F T F T T F F F T F F F F F T F F T F
+negTestEx5     died   T F F F F F F F F T F T F T F F F F T F F F F F F F T F F T F
+negTestEx6     died   T F F F F F F F F T F T F F F F F F F F T T F F F F F F F T F
+negTestEx7     died   T F F F F F F F T F F T F T T T T T T F T T F F F F T F F F T
+negTestEx8     died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTestEx9     died   T F F F F F F F T F F T F T F F F T T F F F F F F F F F T F F
+negTestEx10    died   F T F F F F F F T F F T F T F F T F T F T T F F F F T F F T F
+negTestEx11    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTestEx12    died   T F F F F F F F F T F T F F F F F T T F T T F F F F F F F T F
+negTestEx13    died   T F F F F F F F T F F F T T F T T T T F T T F F F F T F F F T
+posTestEx2     lived  T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTestEx14    died   T F F F F F F F F T F T F F F F F F F F F F F F F F T F F T F
+negTestEx15    died   F F F T F F F F T F F T F T T F F F T F F F F F F F T F F F T
+negTestEx16    died   T F F F F F F F T F T F F T F F F F T F F F F F F F F F F T F
+negTestEx17    died   T F F F F F F F T F F T F F F F F F F F F F F F F F F F F F T
+negTestEx18    died   F F T F F F F F T F F T F T F F F F T T T T F F F F T F F F T
+posTestEx3     lived  T F F F F F F T F F T F F T F F T F T T F F F T F F T F F F T
+negTestEx19    died   F T F F F F F F T F F T F T F F F F T F T T T F F F T F F T F
+negTestEx20    died   T F F F F F F F F T F T F T F F F F F F F F F F F F F F F T F
+negTestEx21    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTestEx22    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTestEx23    died   F T F F F F F F T F F T F T F F F F T F T F F F F F T F F T F
+negTestEx24    died   F T F F F F F F T F F T F F F F F F F F T T F T F F T F F F T
+negTestEx25    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTestEx26    died   T F F F F F F F F T F T F T F F T F T T T T F F F F T F F T F
+negTestEx27    died   T F F F F F F F F T F T F T F F F F T F T T F F F F T F F T F
+negTestEx28    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTestEx29    died   T F F F F F F F T F T F F F F F F F F F T T F F F F T T F T F
+posTestEx4     lived  T F F F F F F F T F F T F T F F T F T F T T F F F F T F F T F
+negTestEx30    died   T F F F F F F F T F F T F T F F F F F F F F F F F F T F F F T
+negTestEx31    died   F F T F F F F F T F T F F T F F F F T T F F F F F F T F F F T
+negTestEx32    died   T F F F F F F F T F F T F F F F F F F F T T F F F F F F F F T
+posTestEx5     lived  F T F F F F F F T F T F F T F F T F T T T T F F F F T F F T F
+negTestEx33    died   T F F F F F F F T F T F F T F F F F T T F F F F F F T F F F T
+negTestEx34    died   T F F F F F F F F T F T F F F F F F F F F F F F F F T F F F T
+negTestEx35    died   T F F F F F F F F T F T F T F F F F T F T T F F F F T F F T F
+negTestEx36    died   T F F F F F F F T F F T F F F F F F T F T T F F F F T F F T F
+negTestEx37    died   F F T F F F F F F T F T F T F F F F T F T T F F F F T F F F T
+negTestEx38    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+posTestEx6     lived  T F F F F F F F T F F T F F F F F F F F T F F F F F F F F F T
+negTestEx39    died   T F F F F F F F T F F T F F F F F F F F T T F F F F T F F T F
+negTestEx40    died   T F F F F F F T F F T F F T F F F F F T T T F F F F T F F F T
+negTestEx41    died   T F F F F F F F T F T F F T F F F F T F F F F F F F T F F F T
+negTestEx42    died   F T F F F F F F T F T F F T F F F F T F F F F T F F T F F F T
+negTestEx43    died   T F F F F F F F F T F T F T T F T F T T F F F F F F T F F F T
+negTestEx44    died   T F F F F F F F T F F T F T F F F F T F T T F F F F T F F T F
+negTestEx45    died   T F F F F F F T F F T F F T F F F F T F F F F F F F T F F T F
+negTestEx46    died   F F T F F F F T F F T F F T F F F F T F T T F F F F T F F F T
+negTestEx47    died   T F F F F F F F T F F T F T F F F F T F T T F F F F F F F T F
+negTestEx48    died   T F F F F F F F T F F T F T F F F T T F T T F F F F T F F F T
+negTestEx49    died   T F F F F F F F T F T F F T F F F F T F F F F F F F T F F F T
+negTestEx50    died   F F T F F F F F F T F F T T F F F T F F F F F F F F F F T F F
+negTestEx51    died   T F F F F F F F T F F T F T F F F F T T T T F F F F T F F F T
+negTestEx52    died   T F F F F F F T F F T F F T F F F F T F T T F F F F T F F T F
+posTestEx7     lived  F T F F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTestEx53    died   T F F F F F F F T F T F F T F F F F T F F F F F F F T F F F T
+negTestEx54    died   F F T F F F F F T F F T F T F F F F T F T T F F F F T F F F T
+negTestEx55    died   T F F F F F F T F F T F F T F F T F F F T T F F F F T F F F T
+negTestEx56    died   F T F F F F F F T F F T F T T F F F T T T F F F F F T F F F T
+negTestEx57    died   T F F F F F F F T F F T F T F T F F T F T T T F F F T F F T F
+posTestEx8     lived  F T F F F F F F T F F T F T F F F F F T F F F F F F T F T F F
+negTestEx58    died   F F T F F F F F T F F T F T F F F F T F F F F T F F T F F F T
+negTestEx59    died   T F F F F F F F T F F T F F F F F F F F T T F F F F F F F F T
+posTestEx9     lived  F T F F F F F F T F F T F F F F F F T F T T F F F F T F F T F
+negTestEx60    died   F T F F F F F F T F F T F F F F F F F F T T F F F F T F F F T
+negTestEx61    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTestEx62    died   F T F F F F F F T F F T F T F F T F F F T T F F F F T F F T F
+posTestEx10    lived  F F F F T F F F F T F T F T F F F F T F F F F F F F T F F F T
+posTestEx11    lived  F T F F F F F F T F F T F T F F F F T F T F F T F F F F F F T
+posTestEx12    lived  T F F F F F F F T F F T F T F F F F T F T T T F F F T F F T F
+negTestEx63    died   T F F F F F F T F F T F F F F F F F F F F F F T F F F F F F T
+negTestEx64    died   T F F F F F F F F T F T F T F T T F T F F F F F F F T F F F T
+negTestEx65    died   F T F F F F F F F T F T F F F F F F F F T T F F F F F F F F T
+negTestEx66    died   T F F F F F F F T F F T F T T F F F T T F F F F F F F F F F T
+negTestEx67    died   T F F F F F F F T F F F T F F F F F F F F F F F F F T F F T F
+negTestEx68    died   T F F F F F F F T F F T F T F T F F T F T T T F F F T F F F T
+negTestEx69    died   F F T F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+negTestEx70    died   T F F F F F F F T F T F F T F F F F T F T T F F F F T F F F T
+negTestEx71    died   T F F F F F F T F F T F F T F T T F T F T T F F F F F F F F T
+negTestEx72    died   T F F F F F F F T F F T F F F F F F F F F F F F F F T F F T F
+negTestEx73    died   T F F F F F F T F F T F F T F F F F T T T T F F F F T F F F T
+
